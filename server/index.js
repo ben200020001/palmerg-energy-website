@@ -1,0 +1,183 @@
+import "dotenv/config";
+import express from "express";
+import cors from "cors";
+import path from "node:path";
+import fs from "node:fs";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const distDir = path.join(__dirname, "../dist");
+
+const app = express();
+
+app.use(cors());
+app.use(express.json({ limit: "1mb" }));
+
+app.get("/api/health", (_req, res) => {
+  res.json({ ok: true });
+});
+
+app.post("/api/search", async (req, res) => {
+  const q = String(req.body?.q ?? "").trim();
+  if (!q) return res.status(400).json({ error: "Missing q" });
+
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    return res.status(500).json({ error: "Server missing OPENAI_API_KEY" });
+  }
+
+  const prompt = `You are a helpful assistant for Genora Energy Limited, a fuel and energy company in Ghana.
+The user searched for: "${q}"
+
+Generate a helpful, informative response about this topic as it relates to Genora Energy's services and operations.
+Genora Energy offers: fuel stations, bulk fuel supply, engine oils & lubricants, LPG services, haulage/logistics, salt mining, and prestige fuel products.
+They are located at No.1 Papaya Street, East Legon, Accra, Ghana. Phone: 059 222 1997 / 020 511 7212.
+
+Return JSON with:
+- summary: string (2-3 sentences)
+- did_you_mean: string or null
+- results: array of 3-5 objects with title, description, page_path, category.
+Allowed page_path values: /Home, /About, /Services, /Contact, /Stations, /Gallery, /FuelingStations, /BulkFuelSupply, /EngineOils, /LPGServices, /GenoraHaulage, /GenoraPrestige, /SaltMining`;
+
+  try {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+        temperature: 0.4,
+        response_format: { type: "json_object" },
+        messages: [
+          { role: "system", content: "Return valid JSON only." },
+          { role: "user", content: prompt },
+        ],
+      }),
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      return res.status(502).json({ error: "LLM request failed", detail: text });
+    }
+
+    const data = await response.json();
+    const content = data?.choices?.[0]?.message?.content;
+    if (!content) return res.status(502).json({ error: "No LLM content" });
+
+    let parsed;
+    try {
+      parsed = JSON.parse(content);
+    } catch {
+      return res.status(502).json({ error: "Invalid JSON from LLM", raw: content });
+    }
+
+    return res.json(parsed);
+  } catch (err) {
+    return res.status(500).json({ error: "Server error", detail: String(err?.message || err) });
+  }
+});
+
+app.post("/api/contact", async (req, res) => {
+  const form = req.body ?? {};
+  const name = String(form.name ?? "").trim();
+  const email = String(form.email ?? "").trim();
+  const subject = String(form.subject ?? "").trim();
+  const message = String(form.message ?? "").trim();
+
+  if (!name || !email || !subject || !message) {
+    return res.status(400).json({ error: "Missing required fields" });
+  }
+
+  const resendKey = process.env.RESEND_API_KEY;
+  if (!resendKey) {
+    return res.status(500).json({ error: "Server missing RESEND_API_KEY" });
+  }
+
+  const to = process.env.CONTACT_TO || "info@genoraenergy.com";
+  const from = process.env.CONTACT_FROM || "Genora Energy <onboarding@resend.dev>";
+
+  const html = `
+    <h2>New Contact Form Submission</h2>
+    <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+    <p><strong>Phone:</strong> ${escapeHtml(String(form.phone || "Not provided"))}</p>
+    <p><strong>Address:</strong> ${escapeHtml(String(form.address || "Not provided"))}</p>
+    <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
+    <hr />
+    <p><strong>Message:</strong></p>
+    <p>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
+  `;
+
+  try {
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${resendKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from,
+        to: [to],
+        subject: `New Contact Form: ${subject}`,
+        html,
+        reply_to: email,
+      }),
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      return res.status(502).json({ error: "Email send failed", detail: text });
+    }
+
+    return res.json({ ok: true });
+  } catch (err) {
+    return res.status(500).json({ error: "Server error", detail: String(err?.message || err) });
+  }
+});
+
+function escapeHtml(input) {
+  return String(input).replace(/[&<>"']/g, (ch) => {
+    switch (ch) {
+      case "&":
+        return "&amp;";
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case '"':
+        return "&quot;";
+      case "'":
+        return "&#39;";
+      default:
+        return ch;
+    }
+  });
+}
+
+if (fs.existsSync(distDir)) {
+  app.use(express.static(distDir));
+  app.get("*", (req, res, next) => {
+    if (req.path.startsWith("/api")) return next();
+    res.sendFile(path.join(distDir, "index.html"), (err) => next(err));
+  });
+} else {
+  // eslint-disable-next-line no-console
+  console.warn("[server] dist/ missing — run `npm run build` before production.");
+}
+
+app.use((req, res) => {
+  res.status(404).json({ error: "Not found" });
+});
+
+const port = Number(process.env.PORT || 5174);
+app.listen(port, () => {
+  // eslint-disable-next-line no-console
+  console.log(`[server] listening on http://localhost:${port}`);
+  if (fs.existsSync(distDir)) {
+    // eslint-disable-next-line no-console
+    console.log(`[server] serving static from ${distDir}`);
+  }
+});
+
