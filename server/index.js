@@ -172,9 +172,10 @@ app.use((req, res) => {
 });
 
 const port = Number(process.env.PORT || 5174);
-app.listen(port, () => {
+const host = process.env.HOST || "0.0.0.0";
+app.listen(port, host, () => {
   // eslint-disable-next-line no-console
-  console.log(`[server] listening on http://localhost:${port}`);
+  console.log(`[server] listening on http://${host}:${port}`);
   if (fs.existsSync(distDir)) {
     // eslint-disable-next-line no-console
     console.log(`[server] serving static from ${distDir}`);
