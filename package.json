@@ -11,7 +11,8 @@
     "typecheck": "tsc -p ./jsconfig.json",
     "preview": "vite preview",
     "server": "node server/index.js",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "deploy:site": "npm run build && npx base44@latest site deploy"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^17.0.0",
