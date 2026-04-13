@@ -1,5 +1,5 @@
 import { PALMERG } from "@/assets/palmerg";
-import { publicAsset } from "@/utils/publicAsset";
+import { resolvePublicPath } from "@/config/siteMedia";
 
 /**
  * Single source for “Products & services” cards (home + Services page).
@@ -10,7 +10,7 @@ export const productsSectionItems = [
     category: "Fuel",
     description:
       "Premium gasoline formulated for everyday motorists and commercial fleets — consistent quality at Palmerg retail and partner outlets.",
-    image: publicAsset("/images/products/gasoline-fueling.png"),
+    image: resolvePublicPath("/images/products/gasoline-fueling.png"),
     link: "/Gasoline",
   },
   {
@@ -18,7 +18,7 @@ export const productsSectionItems = [
     category: "Fuel",
     description:
       "High-performance diesel for trucks, buses, and equipment — engineered for efficiency and reliability across Ghana.",
-    image: publicAsset("/images/products/diesel-fueling.png"),
+    image: resolvePublicPath("/images/products/diesel-fueling.png"),
     link: "/DieselFuel",
   },
   {
@@ -26,7 +26,7 @@ export const productsSectionItems = [
     category: "Logistics",
     description:
       "Reliable fuel haulage and logistics to keep your supply chain moving — from bulk movements to dedicated delivery schedules.",
-    image: publicAsset("/images/products/haulage-palmerg-branded.png"),
+    image: resolvePublicPath("/images/products/haulage-palmerg-branded.png"),
     link: "/FuelTankersHaulage",
   },
   {
@@ -34,7 +34,7 @@ export const productsSectionItems = [
     category: "Products",
     description:
       "Power solutions for homes, businesses, and industry — aligned with our downstream operations and quality focus across Ghana.",
-    image: publicAsset("/images/products/fuel-tankers-haulage.jpeg"),
+    image: resolvePublicPath("/images/products/fuel-tankers-haulage.jpeg"),
     link: "/GeneratorSets",
   },
   {
@@ -50,7 +50,7 @@ export const productsSectionItems = [
     category: "Resources",
     description:
       "Large-scale salt extraction and processing for food-grade and industrial markets — local supply and export with responsible operations.",
-    image: publicAsset("/images/products/salt-mining.png"),
+    image: resolvePublicPath("/images/products/salt-mining.png"),
     link: "/SaltMining",
   },
   {
@@ -58,7 +58,7 @@ export const productsSectionItems = [
     category: "Sustainability",
     description:
       "Solar and clean-energy pathways for businesses and communities — practical steps toward lower-carbon, resilient power.",
-    image: publicAsset("/images/products/renewable-energy.png"),
+    image: resolvePublicPath("/images/products/renewable-energy.png"),
     link: "/RenewableEnergy",
   },
   {
@@ -66,7 +66,7 @@ export const productsSectionItems = [
     category: "Trade",
     description:
       "Sourcing and logistics for general merchandise — structured supply aligned with Palmerg’s trading and haulage strengths.",
-    image: publicAsset("/images/products/general-goods.png"),
+    image: resolvePublicPath("/images/products/general-goods.png"),
     link: "/GeneralGoods",
   },
   {
@@ -74,7 +74,7 @@ export const productsSectionItems = [
     category: "Agriculture",
     description:
       "Fuel, logistics, and partnerships for agriculture — supporting equipment, transport, and productive value chains.",
-    image: publicAsset("/images/products/farming.png"),
+    image: resolvePublicPath("/images/products/farming.png"),
     link: "/Farming",
   },
 ];

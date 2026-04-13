@@ -4,9 +4,9 @@ import { Package, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { publicAsset } from "@/utils/publicAsset";
+import { resolvePublicPath } from "@/config/siteMedia";
 
-const HERO_IMAGE = publicAsset("/images/products/general-goods.png");
+const HERO_IMAGE = resolvePublicPath("/images/products/general-goods.png");
 
 export default function GeneralGoods() {
   return (
