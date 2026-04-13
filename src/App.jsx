@@ -38,11 +38,15 @@ const ScrollToTop = () => {
   return null;
 };
 
+/** Must match Vite `base` / `VITE_BASE_PATH` or hosted subpath routes show nothing. */
+const routerBasename =
+  import.meta.env.BASE_URL === "/" ? undefined : import.meta.env.BASE_URL.replace(/\/$/, "");
+
 function App() {
 
   return (
     <QueryClientProvider client={queryClientInstance}>
-      <Router>
+      <Router basename={routerBasename}>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Navigate to="/Home" replace />} />
