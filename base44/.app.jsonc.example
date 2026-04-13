@@ -1,0 +1,6 @@
+// Copy to `.app.jsonc` in this same folder. The Base44 CLI usually creates
+// `base44/.app.jsonc` when your `base44/config.jsonc` lives here.
+// Do not commit the real file (it is gitignored).
+{
+  "id": "paste-your-base44-app-id-here"
+}
