@@ -2,6 +2,9 @@
 .env
 .env.*
 
+# Base44 CLI — links this repo to your app (contains private app id)
+.app.jsonc
+
 # Logs
 /logs
 *.log
