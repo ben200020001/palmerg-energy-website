@@ -1,0 +1,6 @@
+{
+  "name": "palmerg-energy-website",
+  "site": {
+    "outputDirectory": "./dist"
+  }
+}

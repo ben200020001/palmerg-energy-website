@@ -14,10 +14,6 @@
     "start": "node server/index.js"
   },
   "dependencies": {
-    "concurrently": "^9.1.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.6.1",
-    "express": "^4.21.2",
     "@hello-pangea/dnd": "^17.0.0",
     "@hookform/resolvers": "^4.1.2",
     "@radix-ui/react-accordion": "^1.2.3",
@@ -54,8 +50,12 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
     "date-fns": "^3.6.0",
+    "dotenv": "^16.6.1",
     "embla-carousel-react": "^8.5.2",
+    "express": "^4.21.2",
     "framer-motion": "^11.16.4",
     "html2canvas": "^1.4.1",
     "input-otp": "^1.4.2",
@@ -83,6 +83,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@base44/vite-plugin": "^1.0.6",
     "@eslint/js": "^9.19.0",
     "@types/node": "^22.13.5",
     "@types/react": "^18.2.66",
@@ -102,4 +103,3 @@
     "vite": "^6.1.0"
   }
 }
-

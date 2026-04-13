@@ -1,4 +1,5 @@
 import { PALMERG } from "@/assets/palmerg";
+import { publicAsset } from "@/utils/publicAsset";
 
 /**
  * Media gallery — single source for Gallery grid, GalleryPhoto detail, and Footer thumbnails.
@@ -37,14 +38,14 @@ export const galleryPhotos = [
     description: "Large-scale salt extraction and processing operations serving local and international markets.",
   },
   {
-    src: "/images/palmerg/palmerg-gallery-station.png",
+    src: publicAsset("/images/palmerg/palmerg-gallery-station.png"),
     alt: "Palmerg retail fuel station",
     title: "Retail fuel & service",
     description:
       "Modern station experience—quality fuels and professional service for motorists and businesses across our network.",
   },
   {
-    src: "/images/palmerg/palmerg-gallery-logistics.png",
+    src: publicAsset("/images/palmerg/palmerg-gallery-logistics.png"),
     alt: "Palmerg fuel logistics fleet",
     title: "Logistics & bulk delivery",
     description:

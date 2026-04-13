@@ -4,8 +4,9 @@ import { MapPin, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { publicAsset } from "@/utils/publicAsset";
 
-const HERO_IMAGE = "/images/products/gasoline-fueling.png";
+const HERO_IMAGE = publicAsset("/images/products/gasoline-fueling.png");
 
 export default function Gasoline() {
   return (

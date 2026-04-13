@@ -5,10 +5,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { productsSectionItems } from "@/data/productsSectionItems";
+import { publicAsset } from "@/utils/publicAsset";
 
 const generatorHeroImage =
   productsSectionItems.find((p) => p.link === "/GeneratorSets")?.image ??
-  "/images/products/fuel-tankers-haulage.jpeg";
+  publicAsset("/images/products/fuel-tankers-haulage.jpeg");
 
 export default function GeneratorSets() {
   return (

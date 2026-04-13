@@ -4,6 +4,7 @@ import { Truck, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { publicAsset } from "@/utils/publicAsset";
 
 export default function FuelTankersHaulage() {
   return (
@@ -78,7 +79,7 @@ export default function FuelTankersHaulage() {
               className="rounded-2xl overflow-hidden shadow-xl border border-border"
             >
               <img
-                src="/images/products/haulage-palmerg-branded.png"
+                src={publicAsset("/images/products/haulage-palmerg-branded.png")}
                 alt="Palmerg branded fuel tanker"
                 className="w-full h-[420px] md:h-[520px] object-cover"
               />

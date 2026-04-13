@@ -4,8 +4,9 @@ import { Sprout, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { publicAsset } from "@/utils/publicAsset";
 
-const HERO_IMAGE = "/images/products/farming.png";
+const HERO_IMAGE = publicAsset("/images/products/farming.png");
 
 export default function Farming() {
   return (
