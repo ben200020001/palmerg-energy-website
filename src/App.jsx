@@ -32,7 +32,8 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
   
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    // "instant" is not supported everywhere; "auto" is the safe equivalent for scroll-to-top.
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, [pathname]);
   
   return null;
