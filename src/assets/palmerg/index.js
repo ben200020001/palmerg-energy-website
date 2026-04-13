@@ -1,6 +1,6 @@
 /**
  * Palmerg images imported via Vite so URLs are content-hashed — avoids stale
- * browser cache showing old remote / Genora-era assets.
+ * browser cache showing old remote assets.
  */
 import bulk from "./bulk.png";
 import event1 from "./event1.png";

@@ -38,7 +38,7 @@ export default function SearchResults() {
         did_you_mean: null,
         results: [
           {
-            title: "Contact Genora Energy",
+            title: "Contact Palmerg Energy",
             description: "Reach out to our team for help with products, services, and station locations.",
             page_path: "/Contact",
             category: "Support",
@@ -72,7 +72,7 @@ export default function SearchResults() {
             <span>Search</span>
           </div>
           <h1 className="font-heading font-bold text-3xl md:text-4xl mb-6">
-            {query ? `Results for "${query}"` : "Search Genora Energy"}
+            {query ? `Results for "${query}"` : "Search Palmerg Energy"}
           </h1>
           <form onSubmit={handleSearch} className="relative">
             <input
@@ -160,7 +160,7 @@ export default function SearchResults() {
                         </h3>
                         <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                         <span className="text-xs text-primary/60 mt-2 inline-block">
-                          genoraenergy.com{item.page_path}
+                          palmergenergy.com{item.page_path}
                         </span>
                       </div>
                       <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
@@ -175,7 +175,7 @@ export default function SearchResults() {
 
       {/* Location & Cookie Bar */}
       <div className="flex flex-col md:flex-row text-white">
-        <div className="bg-purple-700 flex-1 py-4">
+        <div className="bg-primary flex-1 py-4">
           <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="https://www.google.com/maps/search/?api=1&query=No.1+Papaya+Street,+East+Legon,+Accra,+Ghana"
@@ -192,7 +192,7 @@ export default function SearchResults() {
           </div>
         </div>
 
-        <div className="bg-purple-500 py-4 hover:bg-purple-700 flex-1 transition-colors duration-300">
+        <div className="bg-accent py-4 hover:bg-primary/90 flex-1 transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-2">
             <Info className="w-5 h-5 flex-shrink-0" />
             <span className="text-sm">Our website uses cookies to improve your experience.</span>

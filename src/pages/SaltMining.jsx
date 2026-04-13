@@ -32,7 +32,7 @@ export default function SaltMining() {
                 Natural Resources, <span className="text-primary">Global Reach</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Genora Energy's salt mining division operates large-scale extraction and processing facilities, serving both local and international markets with consistently high-quality salt products. Our operations meet international food-grade and industrial-grade standards.
+                Palmerg Energy's salt mining division operates large-scale extraction and processing facilities, serving both local and international markets with consistently high-quality salt products. Our operations meet international food-grade and industrial-grade standards.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 From coastal harvesting to export-ready packaging, we manage the entire value chain with precision and environmental responsibility.

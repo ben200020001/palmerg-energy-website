@@ -34,12 +34,12 @@ export default function EngineOils() {
                 More Than Lubricants — A Shield for Your Engine
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Genora oils are more than just lubricants — they are the shield against engine wear and tear, ensuring
-                that your vehicles operate at their peak performance levels with superior Genora protection and reliability
+                Palmerg oils are more than just lubricants — they are the shield against engine wear and tear, ensuring
+                that your vehicles operate at their peak performance levels with superior Palmerg protection and reliability
                 in all conditions.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Whether you're running a single vehicle or managing a commercial fleet, Genora Engine Oils are formulated
+                Whether you're running a single vehicle or managing a commercial fleet, Palmerg Engine Oils are formulated
                 to extend engine life, reduce maintenance costs, and keep your machines running at optimal efficiency.
               </p>
             </motion.div>
@@ -47,7 +47,7 @@ export default function EngineOils() {
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/60d23efae_generated_image.png"
-                  alt="Genora Engine Oils"
+                  alt="Palmerg Engine Oils"
                   className="w-full h-[420px] object-cover"
                 />
               </div>

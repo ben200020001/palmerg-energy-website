@@ -55,8 +55,8 @@ import Faqs from './pages/Faqs';
 import FuelingStations from './pages/FuelingStations';
 import Gallery from './pages/Gallery';
 import GalleryPhoto from './pages/GalleryPhoto';
-import GenoraHaulage from './pages/GenoraHaulage';
-import GenoraPrestige from './pages/GenoraPrestige';
+import PalmergHaulage from './pages/PalmergHaulage';
+import PalmergPrestige from './pages/PalmergPrestige';
 import Home from './pages/Home';
 import LPGServices from './pages/LPGServices';
 import NationwideFuel from './pages/NationwideFuel';
@@ -76,8 +76,8 @@ export const PAGES = {
     "FuelingStations": FuelingStations,
     "Gallery": Gallery,
     "GalleryPhoto": GalleryPhoto,
-    "GenoraHaulage": GenoraHaulage,
-    "GenoraPrestige": GenoraPrestige,
+    "PalmergHaulage": PalmergHaulage,
+    "PalmergPrestige": PalmergPrestige,
     "Home": Home,
     "LPGServices": LPGServices,
     "NationwideFuel": NationwideFuel,

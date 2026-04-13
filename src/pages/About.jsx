@@ -48,7 +48,7 @@ export default function About() {
                 Overview
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6 text-base">
-               Genora Energy Limited is one of Ghana's fastest-growing downstream petroleum marketing companies, licensed by the National Petroleum Authority (NPA). Founded with a vision to democratize access to quality fuel products, we have expanded to over <strong className="text-foreground">strategically 20 located stations</strong> across multiple regions — from Greater Accra to Western Region to Western North, and from Central Region to Ashanti.
+               Palmerg Energy & Resources Limited is one of Ghana's fastest-growing downstream petroleum marketing companies, licensed by the National Petroleum Authority (NPA). Founded with a vision to democratize access to quality fuel products, we have expanded to over <strong className="text-foreground">strategically 20 located stations</strong> across multiple regions — from Greater Accra to Western Region to Western North, and from Central Region to Ashanti.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8 text-base">
                 We pride ourselves on delivering premium petroleum products — petrol, diesel, and LPG — 
@@ -79,7 +79,7 @@ export default function About() {
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/960b6858c_generated_image.png"
-                  alt="Genora Energy Operations"
+                  alt="Palmerg Energy Operations"
                   className="w-full h-[480px] object-cover" />
 
               </div>
@@ -111,7 +111,7 @@ export default function About() {
               <div className="rounded-xl overflow-hidden shadow-xl h-[420px]">
                 <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/fb69c1547_generated_image.png"
-                  alt="Genora Mission"
+                  alt="Palmerg Mission"
                   className="w-full h-full object-cover" />
 
               </div>
@@ -149,7 +149,7 @@ export default function About() {
                     Powering Ghana's Progress, One Station at a Time
                   </h3>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Genora Energy Limited's mission is to be the most trusted, most accessible, and most innovative fuel 
+                    Palmerg Energy & Resources Limited's mission is to be the most trusted, most accessible, and most innovative fuel 
                     marketing company in Ghana — providing clean, quality petroleum products to every corner of the nation 
                     while operating with uncompromising integrity and environmental responsibility.
                   </p>
@@ -168,11 +168,11 @@ export default function About() {
                     West Africa's Most Respected Energy Brand by 2030
                   </h3>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Genora Energy Limited envisions a future where it stands as the benchmark for downstream petroleum excellence 
+                    Palmerg Energy & Resources Limited envisions a future where it stands as the benchmark for downstream petroleum excellence 
                     across West Africa — a company synonymous with quality, reliability, and innovation in energy services.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    Our vision extends beyond fuel — we see Genora as a transformative force in Ghana's energy landscape, 
+                    Our vision extends beyond fuel — we see Palmerg as a transformative force in Ghana's energy landscape, 
                     pioneering sustainable practices and driving forward the nation's energy independence.
                   </p>
                 </div>
@@ -191,7 +191,7 @@ export default function About() {
                   "19+ Operational Stations across 6 Regions of Ghana",
                   "Bulk fuel supply partner for commercial & industrial clients",
                   "4 Million+ litres distributed monthly across our network",
-                  "200+ daily customers served with premium Genora products",
+                  "200+ daily customers served with premium Palmerg products",
                   "99% station uptime through robust maintenance protocols"].
                   map((item, i) =>
                   <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
@@ -226,7 +226,7 @@ export default function About() {
               <p className="text-muted-foreground text-sm italic mb-6">From Humble Beginnings to Nationwide Presence</p>
               <p className="text-muted-foreground leading-relaxed">
                 What began as a bold entrepreneurial dream has grown into one of Ghana's most dynamic energy companies. 
-                Genora Energy Limited was built on a simple but powerful belief: that every Ghanaian deserves access to 
+                Palmerg Energy & Resources Limited was built on a simple but powerful belief: that every Ghanaian deserves access to 
                 quality fuel at fair prices, delivered with a smile.
               </p>
             </motion.div>
@@ -245,7 +245,7 @@ export default function About() {
                   License and Accreditation
                 </h4>
                 <p className="text-muted-foreground leading-relaxed text-sm">
-                  Genora Energy is fully licensed by the National Petroleum Authority (NPA) of Ghana — 
+                  Palmerg Energy is fully licensed by the National Petroleum Authority (NPA) of Ghana — 
                   a testament to our commitment to legal compliance, product quality, and operational 
                   transparency. We meet and exceed all regulatory requirements as a downstream petroleum 
                   marketing company, giving our partners and customers complete confidence in every litre 
@@ -259,7 +259,7 @@ export default function About() {
                   Bulk & Large-Scale Operations
                 </h4>
                 <p className="text-muted-foreground leading-relaxed text-sm">
-                  Beyond retail, Genora Energy is a preferred bulk fuel supplier for mining companies, 
+                  Beyond retail, Palmerg Energy is a preferred bulk fuel supplier for mining companies, 
                   construction firms, agricultural enterprises, and government institutions. Our bulk 
                   depots in the Western North and Ashanti regions ensure seamless supply chain operations 
                   for large-volume customers across Ghana.

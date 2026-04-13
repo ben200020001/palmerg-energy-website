@@ -35,8 +35,8 @@ export default function FuelingStations() {
                 Your Preferred Energy Partner Across Ghana
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Genora Energy Limited is your preferred energy partner across Ghana. We offer high-quality automotive fuels
-                and refined Genora products that power your journey across the continent. With over 19+ strategically located
+                Palmerg Energy & Resources Limited is your preferred energy partner across Ghana. We offer high-quality automotive fuels
+                and refined Palmerg products that power your journey across the continent. With over 19+ strategically located
                 stations nationwide, we ensure you're never far from premium fuel.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
@@ -54,7 +54,7 @@ export default function FuelingStations() {
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/1b585e164_generated_image.png"
-                  alt="Genora Fuel Station"
+                  alt="Palmerg fuel station"
                   className="w-full h-[420px] object-cover"
                 />
               </div>

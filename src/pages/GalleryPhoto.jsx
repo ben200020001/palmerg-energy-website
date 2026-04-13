@@ -7,32 +7,32 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 const photos = [
   {
     src: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/14263d9b7_generated_image.png",
-    alt: "Genora Haulage Operations",
-    title: "Genora Haulage Operations",
+    alt: "Palmerg Haulage Operations",
+    title: "Palmerg Haulage Operations",
     description: "Our haulage fleet in action, delivering fuel reliably across Ghana's network of roads.",
   },
   {
     src: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/7fe1c4481_generated_image.png",
-    alt: "Genora Fuel Station Network",
-    title: "Genora Fuel Station Network",
+    alt: "Palmerg Fuel Station Network",
+    title: "Palmerg Fuel Station Network",
     description: "A glimpse of our nationwide network of premium fuel stations serving motorists across Ghana.",
   },
   {
     src: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/1b585e164_generated_image.png",
-    alt: "Genora Premium Fuel",
-    title: "Genora Premium Fuel",
-    description: "High-quality Genora premium fuel engineered for engine performance and longevity.",
+    alt: "Palmerg Premium Fuel",
+    title: "Palmerg Premium Fuel",
+    description: "High-quality Palmerg premium fuel engineered for engine performance and longevity.",
   },
   {
     src: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/960b6858c_generated_image.png",
-    alt: "Genora Refinery Operations",
-    title: "Genora Refinery Operations",
+    alt: "Palmerg Refinery Operations",
+    title: "Palmerg Refinery Operations",
     description: "State-of-the-art refinery and processing facilities ensuring efficient production and distribution.",
   },
   {
     src: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/fb69c1547_generated_image.png",
-    alt: "Genora Mission & Vision",
-    title: "Genora Mission & Vision",
+    alt: "Palmerg Mission & Vision",
+    title: "Palmerg Mission & Vision",
     description: "Driven by a clear mission and vision to power Ghana's progress and serve every community.",
   },
   {
@@ -45,25 +45,25 @@ const photos = [
     src: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/3ae778b96_generated_image.png",
     alt: "Event Photo 1",
     title: "Company Event",
-    description: "Highlights from one of Genora Energy's memorable company events and celebrations.",
+    description: "Highlights from one of Palmerg Energy's memorable company events and celebrations.",
   },
   {
     src: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/2417e2aab_generated_image.png",
     alt: "Event Photo 2",
     title: "Community Event",
-    description: "Genora Energy engaging with communities and partners at our outreach events.",
+    description: "Palmerg Energy engaging with communities and partners at our outreach events.",
   },
   {
     src: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/e0155a9ec_generated_image.png",
     alt: "Event Photo 3",
     title: "Industry Event",
-    description: "Genora Energy representing excellence at national industry events and exhibitions.",
+    description: "Palmerg Energy representing excellence at national industry events and exhibitions.",
   },
   {
     src: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/f289bfe86_generated_image.png",
     alt: "Event Photo 4",
     title: "Award Ceremony",
-    description: "Celebrating milestones and recognizing excellence within the Genora Energy family.",
+    description: "Celebrating milestones and recognizing excellence within the Palmerg Energy family.",
   },
 ];
 

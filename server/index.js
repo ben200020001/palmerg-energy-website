@@ -26,18 +26,18 @@ app.post("/api/search", async (req, res) => {
     return res.status(500).json({ error: "Server missing OPENAI_API_KEY" });
   }
 
-  const prompt = `You are a helpful assistant for Genora Energy Limited, a fuel and energy company in Ghana.
+  const prompt = `You are a helpful assistant for Palmerg Energy & Resources Limited, a fuel and energy company in Ghana.
 The user searched for: "${q}"
 
-Generate a helpful, informative response about this topic as it relates to Genora Energy's services and operations.
-Genora Energy offers: fuel stations, bulk fuel supply, engine oils & lubricants, LPG services, haulage/logistics, salt mining, and prestige fuel products.
+Generate a helpful, informative response about this topic as it relates to Palmerg Energy's services and operations.
+Palmerg Energy offers: fuel stations, bulk fuel supply, engine oils & lubricants, LPG services, haulage/logistics, salt mining, and related downstream products.
 They are located at No.1 Papaya Street, East Legon, Accra, Ghana. Phone: 059 222 1997 / 020 511 7212.
 
 Return JSON with:
 - summary: string (2-3 sentences)
 - did_you_mean: string or null
 - results: array of 3-5 objects with title, description, page_path, category.
-Allowed page_path values: /Home, /About, /Services, /Contact, /Stations, /Gallery, /FuelingStations, /BulkFuelSupply, /EngineOils, /LPGServices, /GenoraHaulage, /GenoraPrestige, /SaltMining`;
+Allowed page_path values: /Home, /About, /Services, /Contact, /Stations, /Gallery, /FuelingStations, /BulkFuelSupply, /EngineOils, /LPGServices, /PalmergHaulage, /PalmergPrestige, /SaltMining`;
 
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -95,8 +95,8 @@ app.post("/api/contact", async (req, res) => {
     return res.status(500).json({ error: "Server missing RESEND_API_KEY" });
   }
 
-  const to = process.env.CONTACT_TO || "info@genoraenergy.com";
-  const from = process.env.CONTACT_FROM || "Genora Energy <onboarding@resend.dev>";
+  const to = process.env.CONTACT_TO || "info@palmergenergy.com";
+  const from = process.env.CONTACT_FROM || "Palmerg Energy <onboarding@resend.dev>";
 
   const html = `
     <h2>New Contact Form Submission</h2>

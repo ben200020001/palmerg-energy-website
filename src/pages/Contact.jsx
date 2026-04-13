@@ -36,7 +36,7 @@ export default function Contact() {
       {/* Map Section - Full width, matches Viggo proportions */}
       <div className="w-full pt-[120px]">
         <iframe
-          title="Genora Energy Locations"
+          title="Palmerg Energy Locations"
           src="https://www.google.com/maps?q=No.1+Papaya+Street,+East+Legon&output=embed"
           width="100%"
           height="350"
@@ -54,7 +54,7 @@ export default function Contact() {
             <span className="inline-block bg-purple-100 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-4">→ Contact Us</span>
             <h1 className="font-heading font-black text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">Get in touch with us.</h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-base">
-              Please let us know if you have a question, want to leave a comment, or would like further information about Genora Energy Limited.
+              Please let us know if you have a question, want to leave a comment, or would like further information about Palmerg Energy & Resources Limited.
             </p>
           </div>
 
@@ -164,27 +164,27 @@ export default function Contact() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-foreground">
                       <Mail className="w-4 h-4 text-primary" />
-                      <a href="mailto:info@genoraenergy.com" className="hover:text-primary transition-colors">info@genoraenergy.com</a>
+                      <a href="mailto:info@palmergenergy.com" className="hover:text-primary transition-colors">info@palmergenergy.com</a>
                     </div>
                     <div className="flex items-center gap-2 text-foreground">
                       <Mail className="w-4 h-4 text-primary" />
-                      <a href="mailto:graham@genoraenergy.com" className="hover:text-primary transition-colors">graham@genoraenergy.com</a>
+                      <a href="mailto:graham@palmergenergy.com" className="hover:text-primary transition-colors">graham@palmergenergy.com</a>
                     </div>
                     <div className="flex items-center gap-2 text-foreground">
                       <Mail className="w-4 h-4 text-primary" />
-                      <a href="mailto:benbrown@genoraenergy.com" className="hover:text-primary transition-colors">benbrown@genoraenergy.com</a>
+                      <a href="mailto:benbrown@palmergenergy.com" className="hover:text-primary transition-colors">benbrown@palmergenergy.com</a>
                     </div>
                     <div className="flex items-center gap-2 text-foreground">
                       <Mail className="w-4 h-4 text-primary" />
-                      <a href="mailto:nayram@genoraenergy.com" className="hover:text-primary transition-colors">nayram@genoraenergy.com</a>
+                      <a href="mailto:nayram@palmergenergy.com" className="hover:text-primary transition-colors">nayram@palmergenergy.com</a>
                     </div>
                     <div className="flex items-center gap-2 text-foreground">
                       <Mail className="w-4 h-4 text-primary" />
-                      <a href="mailto:fawzy@genoraenergy.com" className="hover:text-primary transition-colors">fawzy@genoraenergy.com</a>
+                      <a href="mailto:fawzy@palmergenergy.com" className="hover:text-primary transition-colors">fawzy@palmergenergy.com</a>
                     </div>
                     <div className="flex items-center gap-2 text-foreground">
                       <Mail className="w-4 h-4 text-primary" />
-                      <a href="mailto:emmanuel@genoraenergy.com" className="hover:text-primary transition-colors">emmanuel@genoraenergy.com</a>
+                      <a href="mailto:emmanuel@palmergenergy.com" className="hover:text-primary transition-colors">emmanuel@palmergenergy.com</a>
                     </div>
                   </div>
                 </div>

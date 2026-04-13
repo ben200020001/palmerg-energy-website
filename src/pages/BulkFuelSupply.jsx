@@ -32,7 +32,7 @@ export default function BulkFuelSupply() {
                 Large-Volume Fuel Supply <span className="text-primary">For Your Business</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Genora Energy is a preferred bulk fuel supplier for mining companies, construction firms, agricultural enterprises, and government institutions. Our depots in the Western North and Ashanti regions ensure seamless supply chain operations for large-volume customers.
+                Palmerg Energy is a preferred bulk fuel supplier for mining companies, construction firms, agricultural enterprises, and government institutions. Our depots in the Western North and Ashanti regions ensure seamless supply chain operations for large-volume customers.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 We offer flexible contract arrangements, dedicated account management, and priority service to ensure your operations never run dry.

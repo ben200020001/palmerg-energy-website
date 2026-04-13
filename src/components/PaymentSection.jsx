@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, CreditCard, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PALMERG } from "@/assets/palmerg";
 
 export default function PaymentSection() {
   return (
@@ -20,7 +21,7 @@ export default function PaymentSection() {
             
             <div className="relative h-[500px] rounded-lg overflow-hidden">
               <img
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/3bed9631f_generated_image.png"
+                src={PALMERG.payment}
                 alt="Mobile Money Payment"
                 className="w-full h-full object-cover" />
               
@@ -49,10 +50,10 @@ export default function PaymentSection() {
             
             <div>
               <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-foreground">
-                Pay Your Way at <span className="text-primary">Genora</span>
+                Pay Your Way at <span className="text-primary">Palmerg</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Experience seamless transactions at all Genora Energy stations with multiple payment options designed for your convenience.
+                Experience seamless transactions at all Palmerg stations with payment options built for convenience and speed.
               </p>
             </div>
 
@@ -79,7 +80,7 @@ export default function PaymentSection() {
 
             <Link to="/Services">
               <Button size="lg" className="bg-primary text-primary-foreground mt-2 pt-2 pr-8 pb-2 pl-8 text-sm font-semibold rounded-md inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow hover:bg-primary/90 h-10">
-                Learn More About Genora Services
+                Learn More About Palmerg Services
               </Button>
             </Link>
           </motion.div>

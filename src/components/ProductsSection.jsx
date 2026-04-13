@@ -1,46 +1,31 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const products = [
-  {
-    title: "Genora Automotive Stations & Quality Fuel",
-    category: "Fueling",
-    description: "Genora Energy Limited is your preferred energy partner across Ghana. We offer high-quality automotive fuels and refined Genora products that power your journey across the continent.",
-    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/1b585e164_generated_image.png",
-    link: "/FuelingStations",
-  },
-  {
-    title: "Genora Prestige",
-    category: "Premium",
-    description: "Our world-class Genora petroleum products are the heart of excellence. From Genora petrol to diesel, our refinement and innovative process makes every mile count in a cleaner, more efficient, and more reliable way.",
-    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/91512fa5b_generated_image.png",
-    link: "/GenoraPrestige",
-  },
-  {
-    title: "Genora Engine Oils & Lubricants",
-    category: "Products",
-    description: "Genora oils are more than just lubricants — they are the shield against engine wear and tear, ensuring that your vehicles operate at their peak performance levels with superior Genora protection and reliability in all conditions.",
-    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/60d23efae_generated_image.png",
-    link: "/EngineOils",
-  },
-];
+import { homeProductsSectionItems } from "@/data/productsSectionItems";
 
 export default function ProductsSection() {
   return (
-    <section id="products" className="py-16 md:py-24 px-4 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {products.map((product, i) => (
+    <section id="products" className="py-12 md:py-20">
+      <div className="mx-auto max-w-6xl rounded-3xl border border-primary/10 bg-white/85 px-5 py-8 shadow-xl shadow-primary/5 backdrop-blur-sm md:px-10 md:py-12">
+        <div className="mb-10 flex flex-col gap-4 md:mb-12 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
+          <div className="max-w-xl border-l-4 border-primary pl-5 text-left">
+            <h2 className="font-heading font-bold text-3xl text-foreground md:text-4xl">Products &amp; services</h2>
+            <p className="mt-2 text-sm text-muted-foreground md:text-base">
+              Generator power, diesel supply, and quality fuel at our automotive stations.
+            </p>
+          </div>
+          <p className="text-xs font-medium uppercase tracking-widest text-primary/80 lg:text-right">Palmerg Energy</p>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {homeProductsSectionItems.map((product, i) => (
             <motion.div
               key={product.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -40px 0px" }}
+              transition={{ duration: 0.45, delay: i * 0.08 }}
             >
               <Card className="overflow-hidden h-full flex flex-col group hover:shadow-xl transition-all duration-300">
                 <div className="relative h-64 overflow-hidden">
@@ -72,6 +57,15 @@ export default function ProductsSection() {
               </Card>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center border-t border-border/60 pt-10 md:mt-12 md:pt-12">
+          <Button asChild size="lg" className="font-semibold">
+            <Link to="/Services">
+              View all products &amp; services
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

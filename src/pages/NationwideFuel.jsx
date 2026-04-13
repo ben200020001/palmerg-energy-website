@@ -32,10 +32,10 @@ export default function NationwideFuel() {
                 Quality Fuel, <span className="text-primary">Everywhere You Go</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                With a growing network of over 19 strategically located stations across Ghana, Genora Energy ensures premium fuel is always within reach for every motorist. From the Western North to the Upper West, and from the Central Region to Ashanti, we've got you covered.
+                With a growing network of over 19 strategically located stations across Ghana, Palmerg Energy ensures premium fuel is always within reach for every motorist. From the Western North to the Upper West, and from the Central Region to Ashanti, we've got you covered.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Every Genora station is staffed with trained professionals and equipped with modern pumping infrastructure to guarantee speed, accuracy, and safety in every transaction.
+                Every Palmerg station is staffed with trained professionals and equipped with modern pumping infrastructure to guarantee speed, accuracy, and safety in every transaction.
               </p>
               <ul className="space-y-3 mb-8">
                 {["19+ stations nationwide", "Premium petrol and diesel", "Trained and courteous attendants", "Modern pumping equipment", "Safety-compliant facilities"].map((item, i) => (

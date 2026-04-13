@@ -12,10 +12,8 @@ import Services from './pages/Services';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import FuelingStations from './pages/FuelingStations';
-import GenoraPrestige from './pages/GenoraPrestige';
 import EngineOils from './pages/EngineOils';
 import NationwideFuel from './pages/NationwideFuel';
-import GenoraHaulage from './pages/GenoraHaulage';
 import LPGServices from './pages/LPGServices';
 import BulkFuelSupply from './pages/BulkFuelSupply';
 import SaltMining from './pages/SaltMining';
@@ -55,11 +53,11 @@ function App() {
           <Route path="/Gallery" element={<Gallery />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/FuelingStations" element={<FuelingStations />} />
-          <Route path="/GenoraPrestige" element={<GenoraPrestige />} />
           <Route path="/EngineOils" element={<EngineOils />} />
           <Route path="/NationwideFuel" element={<NationwideFuel />} />
-          <Route path="/GenoraHaulage" element={<GenoraHaulage />} />
           <Route path="/LPGServices" element={<LPGServices />} />
+          <Route path="/GenoraHaulage" element={<Navigate to="/PalmergHaulage" replace />} />
+          <Route path="/GenoraPrestige" element={<Navigate to="/PalmergPrestige" replace />} />
           <Route path="/BulkFuelSupply" element={<BulkFuelSupply />} />
           <Route path="/SaltMining" element={<SaltMining />} />
           <Route path="/GalleryPhoto" element={<GalleryPhoto />} />

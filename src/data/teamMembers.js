@@ -4,7 +4,7 @@ export const TEAM_MEMBERS = [
     name: "Mr. Joseph Graham Mensah",
     role: "Chief Executive Officer",
     description:
-      "With over 25 years of distinguished leadership in Ghana's petroleum sector, Mr. Agyeman steers Genora Energy's vision with unmatched strategic acumen and a passion for sustainable energy development.",
+      "With over 25 years of distinguished leadership in Ghana's petroleum sector, Mr. Agyeman steers Palmerg Energy's vision with unmatched strategic acumen and a passion for sustainable energy development.",
     photo_url: "",
   },
   {
@@ -12,7 +12,7 @@ export const TEAM_MEMBERS = [
     name: "Mrs. Abena Mensah-Bonsu",
     role: "Chief Financial Officer",
     description:
-      "A financial powerhouse with 20 years of expertise in oil and gas finance, Mrs. Mensah-Bonsu architects Genora's fiscal strategy, ensuring robust growth, investment resilience, and long-term profitability.",
+      "A financial powerhouse with 20 years of expertise in oil and gas finance, Mrs. Mensah-Bonsu architects Palmerg's fiscal strategy, ensuring robust growth, investment resilience, and long-term profitability.",
     photo_url: "",
   },
   {
@@ -20,7 +20,7 @@ export const TEAM_MEMBERS = [
     name: "Engr. Kwame Asante-Poku",
     role: "Director of Operations",
     description:
-      "A seasoned petroleum engineer who has overseen the rollout of 19+ stations across Ghana. Engr. Asante-Poku is the operational backbone of Genora, ensuring every station runs at peak efficiency and safety.",
+      "A seasoned petroleum engineer who has overseen the rollout of 19+ stations across Ghana. Engr. Asante-Poku is the operational backbone of Palmerg, ensuring every station runs at peak efficiency and safety.",
     photo_url: "",
   },
   {
@@ -28,7 +28,7 @@ export const TEAM_MEMBERS = [
     name: "Ms. Ama Osei-Wusu",
     role: "Head of Commercial & Marketing",
     description:
-      "A bold marketing strategist who has transformed Genora Energy into a household brand across Ghana. Ms. Osei-Wusu drives customer acquisition, brand partnerships, and the company's digital transformation journey.",
+      "A bold marketing strategist who has transformed Palmerg Energy into a household brand across Ghana. Ms. Osei-Wusu drives customer acquisition, brand partnerships, and the company's digital transformation journey.",
     photo_url: "",
   },
   {
@@ -36,7 +36,7 @@ export const TEAM_MEMBERS = [
     name: "Mr. Bright Nkrumah-Darko",
     role: "Director of Business Development",
     description:
-      "The architect of Genora's expansion blueprint, Mr. Nkrumah-Darko identifies and unlocks new frontiers — from bulk fuel supply contracts to regional partnerships that extend Genora's reach across West Africa.",
+      "The architect of Palmerg's expansion blueprint, Mr. Nkrumah-Darko identifies and unlocks new frontiers — from bulk fuel supply contracts to regional partnerships that extend Palmerg's reach across West Africa.",
     photo_url: "",
   },
   {
@@ -44,7 +44,7 @@ export const TEAM_MEMBERS = [
     name: "Mr. Samuel Owusu",
     role: "Head of Logistics",
     description:
-      "Strategic logistics expert managing nationwide fuel distribution networks and ensuring timely delivery across all Genora stations.",
+      "Strategic logistics expert managing nationwide fuel distribution networks and ensuring timely delivery across all Palmerg stations.",
     photo_url: "",
   },
   {
@@ -76,7 +76,7 @@ export const TEAM_MEMBERS = [
     name: "Mr. Daniel Mensah",
     role: "Safety & Compliance Officer",
     description:
-      "Championing safety standards and regulatory compliance across all Genora operations and facilities.",
+      "Championing safety standards and regulatory compliance across all Palmerg operations and facilities.",
     photo_url: "",
   },
   {

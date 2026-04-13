@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 
 const faqs = [
   {
-    question: "What products does Genora Energy supply?",
-    answer: "Genora Energy supplies a wide range of petroleum products including petrol, diesel, LPG, lubricants, and engine oils to both retail and bulk customers across Ghana."
+    question: "What products does Palmerg Energy supply?",
+    answer: "Palmerg Energy supplies a wide range of petroleum products including petrol, diesel, LPG, lubricants, and engine oils to both retail and bulk customers across Ghana."
   },
   {
     question: "Where are your fueling stations located?",
-    answer: "Our fueling stations are located across Ghana. You can use the 'Locate our stations' feature on our website to find the nearest Genora Energy station to you."
+    answer: "Our fueling stations are located across Ghana. You can use the 'Locate our stations' feature on our website to find the nearest Palmerg Energy station to you."
   },
   {
     question: "Do you offer bulk fuel supply services?",
@@ -34,8 +34,8 @@ const faqs = [
     answer: "We accept a variety of payment methods including mobile money (MTN MoMo, Vodafone Cash, AirtelTigo Money), bank transfers, and major credit/debit cards for seamless transactions."
   },
   {
-    question: "How can I contact Genora Energy for support?",
-    answer: "You can reach us by phone at 020 511 7212 or 059 222 1997, by email at info@genoraenergy.com, or by visiting our office at No.1 Papaya Street, East Legon, Accra."
+    question: "How can I contact Palmerg Energy for support?",
+    answer: "You can reach us by phone at 020 511 7212 or 059 222 1997, by email at info@palmergenergy.com, or by visiting our office at No.1 Papaya Street, East Legon, Accra."
   }
 ];
 

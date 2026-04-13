@@ -95,21 +95,21 @@ export default function TeamMemberDetail() {
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <Mail className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>
-                      {member.name.toLowerCase().includes("joseph") || member.name.toLowerCase().includes("graham mensah") ? "graham@genoraenergy.com" :
-                       member.name.toLowerCase().includes("benbrown") || member.name.toLowerCase().includes("ben brown") ? "benbrown@genoraenergy.com" :
-                       member.name.toLowerCase().includes("fawzy") ? "fawzy@genoraenergy.com" :
-                       member.name.toLowerCase().includes("emmanuel") ? "emmanuel@genoraenergy.com" :
-                       "info@genoraenergy.com"}
+                      {member.name.toLowerCase().includes("joseph") || member.name.toLowerCase().includes("graham mensah") ? "graham@palmergenergy.com" :
+                       member.name.toLowerCase().includes("benbrown") || member.name.toLowerCase().includes("ben brown") ? "benbrown@palmergenergy.com" :
+                       member.name.toLowerCase().includes("fawzy") ? "fawzy@palmergenergy.com" :
+                       member.name.toLowerCase().includes("emmanuel") ? "emmanuel@palmergenergy.com" :
+                       "info@palmergenergy.com"}
                     </span>
                   </div>
                   <a
-                    href="https://www.genoraenergy.com"
+                    href="https://www.palmergenergy.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-sm text-primary hover:text-accent transition-colors cursor-pointer">
                     
                     <Globe className="w-4 h-4 flex-shrink-0" />
-                    <span>https://genoraenergy.com</span>
+                    <span>https://palmergenergy.com</span>
                   </a>
                 </div>
 

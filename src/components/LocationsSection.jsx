@@ -112,18 +112,18 @@ export default function LocationsSection() {
           >
             <div>
               <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-foreground">
-                Find a Genora <span className="text-primary">Station</span>
+                Find a Palmerg <span className="text-primary">Station</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Over 19+ locations nationwide ready to serve you with premium Genora fuel and service excellence.
+                15 Palmerg sites across Ghana bring you trusted fuels and friendly, professional service wherever you travel.
               </p>
             </div>
 
             <div className="space-y-3">
               {[
                 {
-                  q: "Where can I find the nearest Genora station?",
-                  a: "Use our interactive map above or visit the Stations page to locate the nearest Genora Energy station to you."
+                  q: "Where can I find the nearest Palmerg station?",
+                  a: "Use our interactive map above or visit the Stations page to locate the nearest Palmerg Energy station to you."
                 },
                 {
                   q: "What payment methods are accepted?",
@@ -148,7 +148,7 @@ export default function LocationsSection() {
             <Link to="/Stations" className="w-full">
               <Button size="lg" className="w-full font-semibold">
                 <MapPin className="w-4 h-4 mr-2" />
-                View All Genora Stations
+                View All Palmerg Stations
               </Button>
             </Link>
           </motion.div>

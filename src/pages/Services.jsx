@@ -7,17 +7,17 @@ import { MapPin, Phone, Info } from "lucide-react";
 const services = [
 {
   title: "Nationwide Access to Quality Fuel",
-  description: "With a growing network of over 19 strategically located stations across Ghana, Genora Energy ensures premium fuel is always within reach for every motorist.",
+  description: "With a growing network of over 19 strategically located stations across Ghana, Palmerg Energy ensures premium fuel is always within reach for every motorist.",
   image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/7fe1c4481_generated_image.png",
   category: "Services",
   link: "/NationwideFuel"
 },
 {
-  title: "Genora Haulage",
+  title: "Palmerg Haulage",
   description: "We provide tailored fuel supply solutions for businesses of all sizes. From transportation companies to industrial clients, our haulage services ensure timely delivery.",
   image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/14263d9b7_generated_image.png",
   category: "Services",
-  link: "/GenoraHaulage"
+  link: "/PalmergHaulage"
 },
 {
   title: "Engine Oils & Lubricants",
