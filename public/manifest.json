@@ -1,0 +1,16 @@
+{
+  "name": "Palmerg Energy & Resources Limited",
+  "short_name": "Palmerg Energy",
+  "icons": [
+    {
+      "src": "/palmerg-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a"
+}
