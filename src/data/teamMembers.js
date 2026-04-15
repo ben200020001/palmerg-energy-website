@@ -10,8 +10,6 @@ export const TEAM_MEMBERS = [
     description:
       "Martin is Board Chairman of Palmerg Energy & Resources Limited and a Board Member at Kembrich Security Limited. He is an astute, multi-talented business executive—dedicated, transparent, and loyal—with a strong security mindset and passion for governance. He holds a BSc (Hons) in Material Science and Engineering from Kwame Nkrumah University of Science and Technology (1989); a Post Graduate Diploma in Quality and Environmental Management from the University of Applied Sciences (FH), Cologne, Germany (1997–1999); an MBA from Purdue University, USA (following studies at Purdue from 2000–2001); and Project Management Professional (PMP) certification from the Project Management Institute (PMI), USA. His career began at VALCO as Metallurgist (1989–1990) and Production Engineer (1990–1994), then Quality Assurance and Environmental Control Manager at Wahome Steel Company Limited (1994–1997). He served as Deputy General Manager at Inspections and Control Systems (ICS) Limited, Cantonments, Accra (2003–2009), and Director of Operations at Ghana Link (2009–2014). He is Managing Director of Link International Holdings Group, responsible for six affiliate companies in Ghana and abroad. He is founder and president of a health-related NGO supported by the World Federation of Hemophilia, with a recognised impact on organisational growth and strategic direction.",
     photo_url: "/images/management/martin-boakye.png",
-    /** Frames portrait on flyer-style image in circular avatars */
-    photo_object_position: "88% 78%",
     email: "info@palmergenergy.com",
   },
   {
