@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Zap, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FooterLocationBar from "@/components/FooterLocationBar";
 import { Link } from "react-router-dom";
 import { productsSectionItems } from "@/data/productsSectionItems";
 import { resolvePublicPath } from "@/config/siteMedia";
@@ -90,6 +91,8 @@ export default function GeneratorSets() {
           </div>
         </div>
       </section>
+
+      <FooterLocationBar />
 
       <Footer />
     </div>

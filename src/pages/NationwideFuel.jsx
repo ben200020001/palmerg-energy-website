@@ -4,6 +4,7 @@ import { MapPin, CheckCircle, ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { PALMERG } from "@/assets/palmerg";
 
 export default function NationwideFuel() {
   return (
@@ -32,13 +33,13 @@ export default function NationwideFuel() {
                 Quality Fuel, <span className="text-primary">Everywhere You Go</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                With a growing network of over 19 strategically located stations across Ghana, Palmerg Energy ensures premium fuel is always within reach for every motorist. From the Western North to the Upper West, and from the Central Region to Ashanti, we've got you covered.
+                With a growing network of 20 strategically located stations across Ghana, Palmerg Energy ensures premium fuel is always within reach for every motorist. From the Western North to the Upper West, and from the Central Region to Ashanti, we've got you covered.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Every Palmerg station is staffed with trained professionals and equipped with modern pumping infrastructure to guarantee speed, accuracy, and safety in every transaction.
               </p>
               <ul className="space-y-3 mb-8">
-                {["19+ stations nationwide", "Premium petrol and diesel", "Trained and courteous attendants", "Modern pumping equipment", "Safety-compliant facilities"].map((item, i) => (
+                {["20 stations nationwide", "Premium petrol and diesel", "Trained and courteous attendants", "Modern pumping equipment", "Safety-compliant facilities"].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
                     <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                     {item}
@@ -54,8 +55,8 @@ export default function NationwideFuel() {
 
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/7fe1c4481_generated_image.png"
-                alt="Nationwide Fuel Stations"
+                src={PALMERG.stations}
+                alt="Nationwide Palmerg fuel stations"
                 className="w-full h-[480px] object-cover"
               />
             </motion.div>

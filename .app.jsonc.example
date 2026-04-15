@@ -1,5 +1,0 @@
-// The CLI often writes the real file as `base44/.app.jsonc` (next to `config.jsonc`).
-// Root `.app.jsonc` is also valid on some setups. Use whichever path `base44 link` creates.
-{
-  "id": "paste-your-base44-app-id-here"
-}

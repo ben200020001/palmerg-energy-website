@@ -8,6 +8,12 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.join(__dirname, "../dist");
 
+/** In dev (`npm run dev`), Vite on 5173 is the UI; this server is API-only unless you opt in to serving `dist/`. */
+const serveStaticDist =
+  process.env.NODE_ENV === "production" ||
+  process.env.SERVE_DIST === "1" ||
+  process.env.SERVE_DIST === "true";
+
 const app = express();
 
 app.use(cors());
@@ -156,15 +162,50 @@ function escapeHtml(input) {
   });
 }
 
-if (fs.existsSync(distDir)) {
+if (serveStaticDist && fs.existsSync(distDir)) {
   app.use(express.static(distDir));
   app.get("*", (req, res, next) => {
     if (req.path.startsWith("/api")) return next();
     res.sendFile(path.join(distDir, "index.html"), (err) => next(err));
   });
-} else {
+} else if (serveStaticDist && !fs.existsSync(distDir)) {
   // eslint-disable-next-line no-console
   console.warn("[server] dist/ missing — run `npm run build` before production.");
+} else if (fs.existsSync(distDir)) {
+  // eslint-disable-next-line no-console
+  console.warn(
+    "[server] dev mode: not serving dist/ (avoids stale UI vs Vite). Use http://localhost:5173 for the app. API: /api/*",
+  );
+}
+
+if (!serveStaticDist) {
+  const vitePort = Number(process.env.VITE_DEV_PORT || 5173);
+  app.get("*", (req, res, next) => {
+    if (req.path.startsWith("/api")) return next();
+    res.status(200).type("html").send(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Palmerg — API server (dev)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #0f172a; }
+    code { background: #f1f5f9; padding: 0.15rem 0.35rem; border-radius: 4px; }
+    a { color: hsl(221, 83%, 38%); }
+  </style>
+</head>
+<body>
+  <h1>This port is the API in development</h1>
+  <p>
+    The website runs on <strong>Vite</strong> at
+    <a href="http://localhost:${vitePort}">http://localhost:${vitePort}</a>
+    — open that URL for the Palmerg app (search, contact, etc. use <code>/api/*</code> via the Vite proxy).
+  </p>
+  <p>Quick check: <a href="/api/health"><code>/api/health</code></a> should return <code>${'{ ok: true }'}</code>.</p>
+  <p>To serve the built site from this process: <code>npm run build</code> then <code>npm run start:dist</code> (or set <code>NODE_ENV=production</code>).</p>
+</body>
+</html>`);
+  });
 }
 
 app.use((req, res) => {
@@ -176,7 +217,7 @@ const host = process.env.HOST || "0.0.0.0";
 app.listen(port, host, () => {
   // eslint-disable-next-line no-console
   console.log(`[server] listening on http://${host}:${port}`);
-  if (fs.existsSync(distDir)) {
+  if (serveStaticDist && fs.existsSync(distDir)) {
     // eslint-disable-next-line no-console
     console.log(`[server] serving static from ${distDir}`);
   }

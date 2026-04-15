@@ -31,7 +31,7 @@ export default function TeamMemberDetail() {
         <div className="flex items-center justify-center py-32">
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">Team Member Not Found</h2>
-            <Link to="/About" className="text-primary hover:underline">← Back to About</Link>
+            <Link to="/About#management-profile" className="text-primary hover:underline">← Back to Team</Link>
           </div>
         </div>
         <Footer />
@@ -76,7 +76,7 @@ export default function TeamMemberDetail() {
                 <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 p-2">
                   <div className="w-full h-full rounded-full border-4 border-white shadow-xl bg-white flex items-center justify-center overflow-hidden">
                     <img
-                      src={member.photo_url || "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/ca0496e01_Gemini_Generated_Image_6d8u3s6d8u3s6d8u-removebg-preview.png"}
+                      src={member.photo_url || "/palmerg-logo.png"}
                       alt={member.name}
                       className="w-full h-full object-cover" />
                     
@@ -94,13 +94,7 @@ export default function TeamMemberDetail() {
                   
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span>
-                      {member.name.toLowerCase().includes("joseph") || member.name.toLowerCase().includes("graham mensah") ? "graham@palmergenergy.com" :
-                       member.name.toLowerCase().includes("benbrown") || member.name.toLowerCase().includes("ben brown") ? "benbrown@palmergenergy.com" :
-                       member.name.toLowerCase().includes("fawzy") ? "fawzy@palmergenergy.com" :
-                       member.name.toLowerCase().includes("emmanuel") ? "emmanuel@palmergenergy.com" :
-                       "info@palmergenergy.com"}
-                    </span>
+                    <span>{member.email || "info@palmergenergy.com"}</span>
                   </div>
                   <a
                     href="https://www.palmergenergy.com"
@@ -170,7 +164,7 @@ export default function TeamMemberDetail() {
               {/* Back Link */}
               <div className="pt-6 border-t">
                 <Link
-                  to="/About"
+                  to="/About#management-profile"
                   className="inline-flex items-center gap-2 text-primary hover:text-accent transition-colors font-semibold">
                   ← Back to Team
                 </Link>

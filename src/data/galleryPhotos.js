@@ -1,54 +1,90 @@
-import { PALMERG } from "@/assets/palmerg";
-import { resolvePublicPath } from "@/config/siteMedia";
-
 /**
- * Media gallery — single source for Gallery grid, GalleryPhoto detail, and Footer thumbnails.
+ * Gallery — Palmerg-branded imagery (`public/images`). Each entry matches the asset
+ * (filename / scene type): station forecourts, tankers, salt, diesel, solar, etc.
  */
-export const galleryPhotos = [
+export const GALLERY_PHOTOS = [
   {
-    src: PALMERG.haulage,
-    alt: "Palmerg Haulage Operations",
-    title: "Palmerg Haulage Operations",
+    src: "/images/products/haulage-palmerg-branded.png",
+    alt: "Palmerg-branded fuel tanker on the road",
+    title: "Branded Haulage Fleet",
     description:
-      "Our haulage fleet in action, delivering fuel reliably across Ghana's network of roads.",
+      "Palmerg liveried tankers and road transport for dependable bulk and retail fuel movements across Ghana.",
   },
   {
-    src: PALMERG.stations,
-    alt: "Palmerg Fuel Station Network",
-    title: "Palmerg Fuel Station Network",
-    description: "A glimpse of our nationwide network of premium fuel stations serving motorists across Ghana.",
-  },
-  {
-    src: PALMERG.operations,
-    alt: "Palmerg Refinery Operations",
-    title: "Palmerg Refinery Operations",
+    src: "/images/palmerg/palmerg-gallery-station.png",
+    alt: "Palmerg filling station canopy and forecourt",
+    title: "Retail Station Network",
     description:
-      "State-of-the-art refinery and processing facilities ensuring efficient production and distribution.",
+      "Palmerg-affiliated forecourts with modern dispensing, clear branding, and service focused on motorists and businesses.",
   },
   {
-    src: PALMERG.lpg,
-    alt: "Palmerg Mission & Vision",
-    title: "Palmerg Mission & Vision",
-    description: "Driven by a clear mission and vision to power Ghana's progress and serve every community.",
+    src: "/images/products/gasoline-fueling.png",
+    alt: "Motorist fueling with petrol at a service station",
+    title: "Petrol & Forecourt Service",
+    description:
+      "Gasoline dispensing for cars and light vehicles — attentive attendants and safe, accurate pumping at the island.",
   },
   {
-    src: PALMERG.salt,
-    alt: "Salt Mining & Export",
+    src: "/images/products/fuel-tankers-haulage.jpeg",
+    alt: "Fuel tanker trucks for bulk delivery",
+    title: "Bulk Road Transport",
+    description:
+      "Heavy tankers and scheduling discipline for large-volume deliveries to depots, industry, and high-throughput sites.",
+  },
+  {
+    src: "/images/palmerg/palmerg-gallery-logistics.png",
+    alt: "Logistics yard and Palmerg distribution activity",
+    title: "Distribution & Yard Operations",
+    description:
+      "Coordinated loading, routing, and yard operations that keep supply aligned with stations and bulk customers.",
+  },
+  {
+    src: "/images/products/salt-mining.png",
+    alt: "Industrial salt mining and processing",
     title: "Salt Mining & Export",
-    description: "Large-scale salt extraction and processing operations serving local and international markets.",
+    description:
+      "Large-scale salt extraction and processing for industrial and food-grade markets, with export-oriented quality focus.",
   },
   {
-    src: resolvePublicPath("/images/palmerg/palmerg-gallery-station.png"),
-    alt: "Palmerg retail fuel station",
-    title: "Retail fuel & service",
+    src: "/images/products/diesel-fueling.png",
+    alt: "High-flow diesel dispensing for a commercial vehicle",
+    title: "Diesel for Commercial & Industrial Use",
     description:
-      "Modern station experience—quality fuels and professional service for motorists and businesses across our network.",
+      "High-performance diesel for trucks, buses, and plant — suited to fleets, agriculture, and heavy equipment.",
   },
   {
-    src: resolvePublicPath("/images/palmerg/palmerg-gallery-logistics.png"),
-    alt: "Palmerg fuel logistics fleet",
-    title: "Logistics & bulk delivery",
+    src: "/images/products/renewable-energy.png",
+    alt: "Solar panels and renewable energy installation",
+    title: "Solar & Renewable Pathways",
     description:
-      "Reliable tanker and logistics capacity moving product safely from depots to stations and industrial customers.",
+      "Solar PV and clean-energy options for businesses and communities — practical steps toward lower-carbon, resilient power.",
+  },
+  {
+    src: "/images/products/general-goods.png",
+    alt: "General merchandise and trade logistics",
+    title: "General Goods & Trade",
+    description:
+      "Structured sourcing and logistics for general merchandise, aligned with Palmerg’s trading and haulage capabilities.",
+  },
+  {
+    src: "/images/products/farming.png",
+    alt: "Agriculture, fields, and productive land use",
+    title: "Agriculture & Rural Value Chains",
+    description:
+      "Fuel supply and logistics that support farming — equipment, transport, and productive chains in Ghana’s agricultural economy.",
+  },
+  {
+    src: "/images/palmerg/palmerg-gallery-forecourt-feature.png",
+    alt: "Palmerg-style retail forecourt with modern pumps and canopy",
+    title: "Palmerg Retail Experience",
+    description:
+      "A clean, modern forecourt experience — quality fuels, attentive service, and the Palmerg focus on safety and reliability for every motorist.",
+  },
+  {
+    src: "/images/palmerg/palmerg-gallery-bulk-logistics-feature.png",
+    alt: "Bulk fuel logistics and branded tanker at depot",
+    title: "Palmerg Bulk & Logistics",
+    description:
+      "Bulk movements and depot discipline that keep industry, farms, and partner stations supplied — Palmerg haulage and scheduling you can plan around.",
   },
 ];

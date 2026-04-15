@@ -4,7 +4,10 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { MapContainer, TileLayer, Marker, Tooltip } from "react-leaflet";
+import { PALMERG_STATIONS } from "@/data/stationsLocations";
+import { palmergStationIcon } from "@/lib/palmergMapIcon";
+import { StationMapDetails } from "@/components/map/StationMapDetails";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
@@ -17,35 +20,19 @@ L.Icon.Default.mergeOptions({
 
 export default function LocationsSection() {
   const stats = [
-    { value: "20+", label: "Stations" },
-
-    { value: "19+", label: "Stations" },
+    { value: "20", label: "Stations" },
     { value: "99%", label: "Uptime" },
     { value: "200+", label: "Daily Customers" },
     { value: "4m+", label: "Litres/Month" },
   ];
 
-  const stations = [
-    { name: "Agona Nkwanta", lat: 5.0167, lng: -1.9833, address: "Agona Nkwanta, Ahanta West Municipal District, Ghana" },
-    { name: "Wassa Achempin", lat: 5.5500, lng: -2.3167, address: "Wassa Achempin, Wassa Amenfi West Municipal District, Ghana" },
-    { name: "Nkakaa", lat: 6.8000, lng: -1.5500, address: "Nkakaa, Ashanti Region, Ghana" },
-    { name: "Mankranso", lat: 6.8500, lng: -1.8167, address: "Mankranso, Ahafo Ano South West District, Ghana" },
-    { name: "Wa", lat: 10.0600, lng: -2.5000, address: "Wa, Upper West Region, Ghana" },
-    { name: "Subin", lat: 6.6885, lng: -1.6244, address: "Subin, Kumasi, Ghana" },
-    { name: "Asankragua", lat: 5.8667, lng: -2.3167, address: "Asankragua, Wassa Amenfi West Municipal District, Ghana" },
-    { name: "Sefwi Nsawora", lat: 6.2167, lng: -2.6333, address: "Sefwi Nsawora, Bodi District, Ghana" },
-    { name: "Enchi", lat: 5.6667, lng: -2.8333, address: "Enchi, Western North Region, Ghana" },
-    { name: "Bulk Site (Western North)", lat: 5.8000, lng: -2.5000, address: "Bulk Site, Western North Region, Ghana" },
-    { name: "Okyereko", lat: 5.1333, lng: -0.8000, address: "Okyereko, Central Region, Ghana" },
-    { name: "Kasoa Ofaakor", lat: 5.5333, lng: -0.4167, address: "Kasoa Ofaakor, Central Region, Ghana" },
-    { name: "Nsuayem", lat: 5.6167, lng: -1.3500, address: "Nsuayem, Central Region, Ghana" },
-    { name: "Esaase", lat: 5.4500, lng: -1.5000, address: "Esaase, Central Region, Ghana" },
-    { name: "New Edubiase", lat: 6.1833, lng: -1.4667, address: "New Edubiase, Ashanti Region, Ghana" },
-    { name: "Obuasi", lat: 6.2000, lng: -1.6667, address: "Obuasi, Ashanti Region, Ghana" },
-    { name: "Ejura", lat: 7.3833, lng: -1.3667, address: "Ejura, Ashanti Region, Ghana" },
-    { name: "Bulk Site (Ashanti)", lat: 6.7000, lng: -1.6200, address: "Bulk Site, Ashanti Region, Ghana" },
-    { name: "Kintampo", lat: 8.0500, lng: -1.7333, address: "Kintampo, Bono Region, Ghana" }
-  ];
+  const stations = PALMERG_STATIONS.map(({ id, name, lat, lng, location }) => ({
+    id,
+    name,
+    lat,
+    lng,
+    address: location,
+  }));
 
   return (
     <section className="py-16 md:py-24 px-4 bg-white relative z-0">
@@ -70,26 +57,28 @@ export default function LocationsSection() {
                 zoomControl={true}
               >
                 <TileLayer
-  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map tiles &copy; <a href="https://www.maptiler.com/">MapTiler</a>'
-  url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=PMZUiDTvjZ2oW3CbynLv"
-
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {stations.map((station, idx) => (
-                  <Marker key={idx} position={[station.lat, station.lng]}>
-                    <Tooltip direction="top" offset={[0, -10]} opacity={1}>
-                      <div className="text-center">
-                        <h3 className="font-heading font-bold text-sm text-primary mb-1">{station.name}</h3>
-                        <p className="text-xs text-muted-foreground">{station.address}</p>
-                      </div>
-                    </Tooltip>
+                {stations.map((station) => (
+                  <Marker
+                    key={station.id}
+                    position={[station.lat, station.lng]}
+                    icon={palmergStationIcon}
+                  >
+                    <Popup
+                      className="palmerg-station-popup"
+                      maxWidth={280}
+                      autoPanPadding={L.point(24, 120)}
+                    >
+                      <StationMapDetails name={station.name} location={station.address} />
+                    </Popup>
                   </Marker>
                 ))}
               </MapContainer>
 
               {/* Stats overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-3 sm:p-4 md:p-6 border-t z-[1000]">
+              <div className="absolute bottom-0 left-0 right-0 z-[30] border-t bg-white/95 p-3 backdrop-blur-sm sm:p-4 md:p-6">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
                   {stats.map((stat, i) => (
                     <div key={i} className="text-center">
@@ -115,7 +104,7 @@ export default function LocationsSection() {
                 Find a Palmerg <span className="text-primary">Station</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                15 Palmerg sites across Ghana bring you trusted fuels and friendly, professional service wherever you travel.
+                20 Palmerg sites across Ghana bring you trusted fuels and friendly, professional service wherever you travel.
               </p>
             </div>
 

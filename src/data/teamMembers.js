@@ -1,107 +1,51 @@
+/**
+ * Management profile — aligned with company profile PDF (`/palmerg-company-profile.pdf`).
+ * Photos: `public/images/management/`.
+ */
 export const TEAM_MEMBERS = [
   {
     id: "1",
-    name: "Mr. Joseph Graham Mensah",
-    role: "Chief Executive Officer",
+    name: "Nana Yaw Adomako Kufuor (MBA, MPhil, B.A)",
+    role: "Board Chairman",
     description:
-      "With over 25 years of distinguished leadership in Ghana's petroleum sector, Mr. Agyeman steers Palmerg Energy's vision with unmatched strategic acumen and a passion for sustainable energy development.",
-    photo_url: "",
+      '"Success isn\'t always about greatness; it\'s about consistency." Nana brings 13+ years in investment banking and oil & gas trade finance, with a boots-on-the-ground leadership style. As Board Chairman of Palmerg Energy, he sets long-term board vision and ensures strategic goals are executed. His background spans computing and information studies in London to an MPhil in Industrial Finance at KNUST—combining technical depth with financial discipline.',
+    photo_url: "/images/management/nana-yaw-adomako-kufuor.png",
+    email: "info@palmergenergy.com",
   },
   {
     id: "2",
-    name: "Mrs. Abena Mensah-Bonsu",
-    role: "Chief Financial Officer",
+    name: "Joseph G. Mensah (B.Com / ACCA / MBA)",
+    role: "Managing Director",
     description:
-      "A financial powerhouse with 20 years of expertise in oil and gas finance, Mrs. Mensah-Bonsu architects Palmerg's fiscal strategy, ensuring robust growth, investment resilience, and long-term profitability.",
-    photo_url: "",
+      "A turnaround specialist known for driving strategic financial vision—including revenue growth through disciplined execution. Joseph leads Palmerg Energy as Managing Director, working alongside the board and operations leadership to scale the business with precision and regulatory awareness.",
+    photo_url: "/images/management/joseph-g-mensah.png",
+    email: "graham@palmergenergy.com",
   },
   {
     id: "3",
-    name: "Engr. Kwame Asante-Poku",
-    role: "Director of Operations",
+    name: "Mohammed Jamal Abdulai (MBA, BSc)",
+    role: "Operations Director",
     description:
-      "A seasoned petroleum engineer who has overseen the rollout of 19+ stations across Ghana. Engr. Asante-Poku is the operational backbone of Palmerg, ensuring every station runs at peak efficiency and safety.",
-    photo_url: "",
+      "Former National Petroleum Authority (NPA) official with three years ensuring integrity of depot operations—then private-sector leadership with Santol Energy and consultancy with Viggo Energy. As Operations Director, he channels a decade of experience and an MBA in Finance toward making Palmerg a household name in Ghana’s energy landscape, pairing regulatory insight with entrepreneurial drive.",
+    photo_url: "/images/management/mohammed-jamal-abdulai.png",
+    email: "info@palmergenergy.com",
   },
   {
     id: "4",
-    name: "Ms. Ama Osei-Wusu",
-    role: "Head of Commercial & Marketing",
+    name: "Bawa Abdallah Abubakari (B.Com)",
+    role: "Marketing Manager",
     description:
-      "A bold marketing strategist who has transformed Palmerg Energy into a household brand across Ghana. Ms. Osei-Wusu drives customer acquisition, brand partnerships, and the company's digital transformation journey.",
-    photo_url: "",
+      "Over 15 years across auditing, finance, and operations, with leadership roles at Dukes Petroleum and Blanko Oil. Since 2020 he has spearheaded Palmerg’s Northern Regional operations, using regulatory and operational depth to support Palmerg’s transition into a premier licensed oil marketing company and expand the brand across Ghana.",
+    photo_url: "/images/management/bawa-abdallah-abubakari.jpeg",
+    email: "info@palmergenergy.com",
   },
   {
     id: "5",
-    name: "Mr. Bright Nkrumah-Darko",
-    role: "Director of Business Development",
+    name: "Emmanuel Asmah",
+    role: "Executive Director (Special Duties)",
     description:
-      "The architect of Palmerg's expansion blueprint, Mr. Nkrumah-Darko identifies and unlocks new frontiers — from bulk fuel supply contracts to regional partnerships that extend Palmerg's reach across West Africa.",
-    photo_url: "",
-  },
-  {
-    id: "6",
-    name: "Mr. Samuel Owusu",
-    role: "Head of Logistics",
-    description:
-      "Strategic logistics expert managing nationwide fuel distribution networks and ensuring timely delivery across all Palmerg stations.",
-    photo_url: "",
-  },
-  {
-    id: "7",
-    name: "Ms. Grace Adjei",
-    role: "Human Resources Manager",
-    description:
-      "Dedicated HR professional fostering talent development and building a culture of excellence across the organization.",
-    photo_url: "",
-  },
-  {
-    id: "8",
-    name: "Mr. Eric Boateng",
-    role: "IT & Systems Manager",
-    description:
-      "Technology innovator driving digital transformation and implementing cutting-edge systems for operational efficiency.",
-    photo_url: "",
-  },
-  {
-    id: "9",
-    name: "Mrs. Joyce Appiah",
-    role: "Quality Assurance Manager",
-    description:
-      "Ensuring every litre meets international standards through rigorous quality control and testing protocols.",
-    photo_url: "",
-  },
-  {
-    id: "10",
-    name: "Mr. Daniel Mensah",
-    role: "Safety & Compliance Officer",
-    description:
-      "Championing safety standards and regulatory compliance across all Palmerg operations and facilities.",
-    photo_url: "",
-  },
-  {
-    id: "11",
-    name: "Ms. Elizabeth Asare",
-    role: "Customer Relations Manager",
-    description:
-      "Building lasting relationships with customers and ensuring exceptional service delivery at every touchpoint.",
-    photo_url: "",
-  },
-  {
-    id: "12",
-    name: "Mr. Patrick Ofori",
-    role: "Regional Operations Coordinator",
-    description:
-      "Overseeing day-to-day operations across regional stations and maintaining service excellence standards.",
-    photo_url: "",
-  },
-  {
-    id: "13",
-    name: "Mrs. Linda Frimpong",
-    role: "Procurement & Supply Chain Lead",
-    description:
-      "Managing strategic supplier relationships and optimizing the procurement process for seamless operations.",
-    photo_url: "",
+      "Executive director in charge of special duties. Before joining Palmerg, Emmanuel worked in import/export of general goods, fuel haulage, and logistics from 2012. Appointed a director of Palmerg Energy in February 2025. Known as a fast thinker and strong problem-solver.",
+    photo_url: "/images/management/emmanuel-asmah.jpeg",
+    email: "emmanuel@palmergenergy.com",
   },
 ];
-

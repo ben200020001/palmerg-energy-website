@@ -29,13 +29,19 @@ const LayoutWrapper = ({ children, currentPageName }) => Layout ?
   : <>{children}</>;
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  
+  const { pathname, hash } = useLocation();
+
   useEffect(() => {
-    // "instant" is not supported everywhere; "auto" is the safe equivalent for scroll-to-top.
+    if (hash) {
+      const id = hash.replace(/^#/, "");
+      const timer = window.setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "auto", block: "start" });
+      }, 0);
+      return () => clearTimeout(timer);
+    }
     window.scrollTo({ top: 0, behavior: "auto" });
-  }, [pathname]);
-  
+  }, [pathname, hash]);
+
   return null;
 };
 
@@ -61,8 +67,6 @@ function App() {
           <Route path="/EngineOils" element={<EngineOils />} />
           <Route path="/NationwideFuel" element={<NationwideFuel />} />
           <Route path="/LPGServices" element={<LPGServices />} />
-          <Route path="/GenoraHaulage" element={<Navigate to="/PalmergHaulage" replace />} />
-          <Route path="/GenoraPrestige" element={<Navigate to="/PalmergPrestige" replace />} />
           <Route path="/BulkFuelSupply" element={<BulkFuelSupply />} />
           <Route path="/SaltMining" element={<SaltMining />} />
           <Route path="/GalleryPhoto" element={<GalleryPhoto />} />

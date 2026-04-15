@@ -4,7 +4,7 @@
 
 
 # Must match your Fly.io app name (`fly apps list`). Change only if you create/rename the app.
-app = "genoraenergy-express"
+app = "palmerg-energy-website"
 primary_region = "ams"
 
 [http_service]

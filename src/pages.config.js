@@ -48,8 +48,15 @@
  * The mainPage value must match a key in the PAGES object exactly.
  */
 import About from './pages/About';
+import AutomotiveQualityFuel from './pages/AutomotiveQualityFuel';
 import BulkFuelSupply from './pages/BulkFuelSupply';
 import Contact from './pages/Contact';
+import DieselFuel from './pages/DieselFuel';
+import Farming from './pages/Farming';
+import FuelTankersHaulage from './pages/FuelTankersHaulage';
+import Gasoline from './pages/Gasoline';
+import GeneralGoods from './pages/GeneralGoods';
+import GeneratorSets from './pages/GeneratorSets';
 import EngineOils from './pages/EngineOils';
 import Faqs from './pages/Faqs';
 import FuelingStations from './pages/FuelingStations';
@@ -57,6 +64,7 @@ import Gallery from './pages/Gallery';
 import GalleryPhoto from './pages/GalleryPhoto';
 import PalmergHaulage from './pages/PalmergHaulage';
 import PalmergPrestige from './pages/PalmergPrestige';
+import RenewableEnergy from './pages/RenewableEnergy';
 import Home from './pages/Home';
 import LPGServices from './pages/LPGServices';
 import NationwideFuel from './pages/NationwideFuel';
@@ -69,8 +77,15 @@ import TeamMember from './pages/TeamMember';
 
 export const PAGES = {
     "About": About,
+    "AutomotiveQualityFuel": AutomotiveQualityFuel,
     "BulkFuelSupply": BulkFuelSupply,
     "Contact": Contact,
+    "DieselFuel": DieselFuel,
+    "Farming": Farming,
+    "FuelTankersHaulage": FuelTankersHaulage,
+    "Gasoline": Gasoline,
+    "GeneralGoods": GeneralGoods,
+    "GeneratorSets": GeneratorSets,
     "EngineOils": EngineOils,
     "Faqs": Faqs,
     "FuelingStations": FuelingStations,
@@ -78,6 +93,7 @@ export const PAGES = {
     "GalleryPhoto": GalleryPhoto,
     "PalmergHaulage": PalmergHaulage,
     "PalmergPrestige": PalmergPrestige,
+    "RenewableEnergy": RenewableEnergy,
     "Home": Home,
     "LPGServices": LPGServices,
     "NationwideFuel": NationwideFuel,

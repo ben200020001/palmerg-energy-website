@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { MapPin, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FooterLocationBar from "@/components/FooterLocationBar";
 import { Link } from "react-router-dom";
 import { PALMERG } from "@/assets/palmerg";
 
@@ -90,6 +91,8 @@ export default function AutomotiveQualityFuel() {
           </div>
         </div>
       </section>
+
+      <FooterLocationBar />
 
       <Footer />
     </div>

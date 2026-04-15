@@ -4,6 +4,7 @@ import { Globe, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { PALMERG } from "@/assets/palmerg";
 
 export default function SaltMining() {
   return (
@@ -54,8 +55,8 @@ export default function SaltMining() {
 
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/efa7f7aa0_generated_image.png"
-                alt="Salt Mining & Export"
+                src={PALMERG.heroSaltMining}
+                alt="Salt mining and export operations"
                 className="w-full h-[480px] object-cover"
               />
             </motion.div>

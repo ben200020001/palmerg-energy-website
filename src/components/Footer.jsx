@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-import { galleryPhotos } from "@/data/galleryPhotos";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="border-t border-white/20 bg-gradient-to-b from-primary to-[hsl(221_83%_28%)] text-primary-foreground shadow-[0_-4px_24px_-8px_hsl(221_83%_20%/0.35)]">
       <div className="site-container py-12 lg:py-16">
         <div className="mb-12 grid gap-10 border-b border-white/20 pb-12 sm:grid-cols-2 lg:grid-cols-3">
           <div>

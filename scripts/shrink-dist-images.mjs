@@ -1,5 +1,5 @@
 /**
- * Post-build: shrink raster images in dist/ so Base44 `site deploy` (5MB cap) can succeed.
+ * Post-build: shrink raster images in dist/ to keep deploy bundles smaller.
  * Run automatically after `vite build` via package.json "build" script.
  */
 import fs from "node:fs/promises";
@@ -10,7 +10,7 @@ import sharp from "sharp";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.join(__dirname, "..", "dist");
 
-// Base44 site deploy max archive ~5MB — keep output small.
+// Keep dist image payload small for hosting upload limits.
 const MAX_WIDTH = 800;
 const PNG_Q = 32;
 const JPEG_Q = 50;

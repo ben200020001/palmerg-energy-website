@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Target, Eye, Award, Users, CheckCircle, ChevronRight, Flame, Zap, Globe, Shield, MapPin, Phone, Info } from "lucide-react";
+import { ChevronRight, Shield, Compass, BadgeCheck, Handshake, Building2, Leaf, FileDown } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import FooterLocationBar from "@/components/FooterLocationBar";
 import { Link } from "react-router-dom";
 import { TEAM_MEMBERS } from "@/data/teamMembers";
 
 const coreValues = [
-{ icon: Shield, title: "Integrity", description: "We operate with absolute transparency, honesty, and ethical standards in every transaction and relationship." },
-{ icon: Flame, title: "Excellence", description: "From fuel quality to customer service, we relentlessly pursue the highest standards across all touchpoints." },
-{ icon: Zap, title: "Innovation", description: "We embrace cutting-edge technology and modern practices to deliver smarter, cleaner, and more efficient energy solutions." },
-{ icon: Globe, title: "Sustainability", description: "We are committed to responsible environmental stewardship, ensuring our operations benefit both present and future generations." }];
+  { icon: Compass, title: "Future-Focused Planning", description: "We don't just react to the present; we prepare for the future. Anticipating what's next is how we stay ahead." },
+  { icon: BadgeCheck, title: "Relentless Professionalism", description: "Excellence is our daily standard—sharp, accurate, and timely, with total responsibility on every task." },
+  { icon: Handshake, title: "Shared Success", description: "We align our interests with partners, employees, and regulators to turn common goals into reality." },
+  { icon: Building2, title: "Community Impact", description: "We strengthen the energy sector and the communities where we live and work—not only the bottom line." },
+  { icon: Leaf, title: "Environmental Stewardship", description: "We conserve energy and safeguard the environment wherever our operations touch the value chain." },
+];
 
 
 export default function About() {
@@ -48,24 +51,48 @@ export default function About() {
                 Overview
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6 text-base">
-               Palmerg Energy & Resources Limited is one of Ghana's fastest-growing downstream petroleum marketing companies, licensed by the National Petroleum Authority (NPA). Founded with a vision to democratize access to quality fuel products, we have expanded to over <strong className="text-foreground">strategically 20 located stations</strong> across multiple regions — from Greater Accra to Western Region to Western North, and from Central Region to Ashanti.
+                Palmerg Energy &amp; Resources Limited is a private, wholly Ghanaian company engaged in filling station management, oil and gas brokerage and supply, fuel haulage, and general consultancy in the downstream sector. A strategic objective is to become a fully fledged oil marketing company; we are{" "}
+                <strong className="text-foreground">advancing through the National Petroleum Authority (NPA) licensing process</strong>.
+                We broker fuel supply from Bulk Distribution Companies (BDCs) to Oil Marketing Companies (OMCs), and we manage filling stations facing operational challenges—delivering practical solutions and consultancy alongside consistent quality products and superior service to loyal clients.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-8 text-base">
-                We pride ourselves on delivering premium petroleum products — petrol, diesel, and LPG — 
-                backed by world-class service infrastructure, bulk supply capabilities, and a team of 
-                passionate professionals who live and breathe energy.
+              <p className="text-muted-foreground leading-relaxed mb-6 text-base">
+                Our leadership brings deep experience across market dynamics, station management, haulage and logistics, and downstream consultancy—supporting partners, regulators, and communities as we grow.
               </p>
+            
 
-              <div className="border-l-4 border-primary pl-4 mb-8">
-                <p className="font-heading font-bold text-sm text-primary uppercase tracking-wider mb-3">Our Core Values</p>
-                <ul className="space-y-2">
-                  {["Integrity in all operations", "Excellence in service delivery", "Innovation-driven growth", "Safety-first culture", "Community empowerment"].map((v, i) =>
-                  <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                      {v}
-                    </li>
-                  )}
-                </ul>
+              <div className="mb-8">
+                <p className="font-heading font-bold text-sm text-primary uppercase tracking-wider mb-4 border-l-4 border-primary pl-4">
+                  At a glance
+                </p>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-xl border border-primary/15 bg-gradient-to-br from-primary/[0.07] to-transparent p-4 shadow-sm">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-primary/90">Heritage</p>
+                    <p className="font-heading mt-2 text-lg font-bold leading-tight text-foreground sm:text-xl">
+                      In business since 2010
+                    </p>
+                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                      Serving Ghana&apos;s downstream energy market with consistent quality and service.
+                    </p>
+                  </div>
+                  <div className="rounded-xl border border-primary/15 bg-white p-4 shadow-sm">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-primary/90">Governance</p>
+                    <p className="font-heading mt-2 text-lg font-bold leading-tight text-foreground sm:text-xl">
+                      Five-member board
+                    </p>
+                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                      Strategic oversight and direction for the Palmerg group.
+                    </p>
+                  </div>
+                  <div className="rounded-xl border border-primary/15 bg-white p-4 shadow-sm sm:col-span-1">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-primary/90">Scale</p>
+                    <p className="font-heading mt-2 text-lg font-bold leading-tight text-foreground sm:text-xl">
+                      Over 8.5 million litres traded to date
+                    </p>
+                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                      Across our network and partnerships, with volumes continuing to grow.
+                    </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
@@ -78,15 +105,52 @@ export default function About() {
 
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/960b6858c_generated_image.png"
-                  alt="Palmerg Energy Operations"
+                  src="/images/palmerg/palmerg-gallery-station.png"
+                  alt="Palmerg Energy fuel station operations"
                   className="w-full h-[480px] object-cover" />
 
               </div>
-              {/* Floating stat card */}
-              <div className="absolute -bottom-6 -left-6 bg-primary text-white rounded-xl p-5 shadow-xl">
-                <p className="font-heading font-black text-4xl">19+</p>
-                <p className="text-white/80 text-sm font-medium">Stations Nationwide</p>
+              {/* Floating stats — company profile */}
+              <div className="absolute -bottom-6 -left-6 right-4 max-w-[min(100%,24rem)] rounded-2xl border border-white/15 bg-primary p-1 shadow-2xl shadow-primary/25 sm:right-auto">
+                <div className="flex divide-x divide-white/20 rounded-xl bg-primary/95 px-1 py-4 sm:py-5">
+                  <div className="flex min-w-0 flex-1 flex-col items-center justify-center gap-0.5 px-2 text-center sm:px-3">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                      Heritage
+                    </span>
+                    <span className="text-[10px] font-medium leading-tight text-white/90 sm:text-[11px]">
+                      In business since
+                    </span>
+                    <span className="font-heading text-2xl font-black tabular-nums leading-none text-white sm:text-3xl">
+                      2010
+                    </span>
+                  </div>
+                  <div className="flex min-w-0 flex-1 flex-col items-center justify-center gap-0.5 px-2 text-center sm:px-3">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                      Governance
+                    </span>
+                    <span className="text-[10px] font-medium leading-tight text-white/90 sm:text-[11px]">
+                      Our board comprises
+                    </span>
+                    <span className="font-heading text-2xl font-black tabular-nums leading-none text-white sm:text-3xl">
+                      5
+                    </span>
+                    <span className="text-[10px] font-medium leading-snug text-white/85 sm:text-xs">members</span>
+                  </div>
+                  <div className="flex min-w-0 flex-1 flex-col items-center justify-center gap-0.5 px-2 text-center sm:px-3">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                      Scale
+                    </span>
+                    <span className="text-[10px] font-medium leading-tight text-white/90 sm:text-[11px]">
+                      Over
+                    </span>
+                    <span className="font-heading text-2xl font-black leading-none text-white sm:text-3xl">
+                      8.5M+
+                    </span>
+                    <span className="max-w-[7rem] text-[10px] font-medium leading-snug text-white/85 sm:text-xs">
+                      litres traded to date
+                    </span>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -94,7 +158,7 @@ export default function About() {
       </section>
 
       {/* Mission / Vision Tabs Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-purple-50 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-primary/[0.06] relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary rounded-full translate-y-1/2 -translate-x-1/2" />
@@ -110,8 +174,8 @@ export default function About() {
 
               <div className="rounded-xl overflow-hidden shadow-xl h-[420px]">
                 <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/fb69c1547_generated_image.png"
-                  alt="Palmerg Mission"
+                  src="/images/palmerg/palmerg-gallery-logistics.png"
+                  alt="Palmerg logistics and distribution"
                   className="w-full h-full object-cover" />
 
               </div>
@@ -143,62 +207,60 @@ export default function About() {
               {activeTab === "mission" &&
               <div>
                   <span className="inline-flex items-center gap-2 bg-secondary/20 text-secondary-foreground text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase">
-                    🎯 Our Mission
+                    Our mission
                   </span>
                   <h3 className="font-heading font-bold text-3xl text-foreground mb-5">
-                    Powering Ghana's Progress, One Station at a Time
+                    Quality products. Superior services.
                   </h3>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Palmerg Energy & Resources Limited's mission is to be the most trusted, most accessible, and most innovative fuel 
-                    marketing company in Ghana — providing clean, quality petroleum products to every corner of the nation 
-                    while operating with uncompromising integrity and environmental responsibility.
+                    At Palmerg Energy, our core values are the heartbeat of what we do: future-focused planning, relentless professionalism,
+                    shared success with partners and regulators, community impact, and environmental stewardship. We prepare for what is next,
+                    execute with accuracy, and align our interests with those who depend on reliable energy and honest dealing.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    We are committed to empowering communities, enabling businesses, and fueling the economic engine of 
-                    Ghana through consistent product availability, competitive pricing, and service excellence.
+                    Operationally, we focus on brokerage (BDCs to OMCs), station management where sites need support, haulage and logistics,
+                    and consultancy—always with the aim of becoming a fully fledged oil marketing company under NPA oversight.
                   </p>
                 </div>
               }
               {activeTab === "vision" &&
               <div>
                   <span className="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase">
-                    👁 Our Vision
+                    Our vision
                   </span>
                   <h3 className="font-heading font-bold text-3xl text-foreground mb-5">
-                    West Africa's Most Respected Energy Brand by 2030
+                    A key player in Ghana&apos;s downstream sector
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Palmerg Energy & Resources Limited envisions a future where it stands as the benchmark for downstream petroleum excellence 
-                    across West Africa — a company synonymous with quality, reliability, and innovation in energy services.
+                  <p className="text-muted-foreground leading-relaxed mb-4 text-lg font-medium text-foreground/90">
+                    To be a key player in the downstream sector of the oil industry in Ghana through the provision of quality products and superior services.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    Our vision extends beyond fuel — we see Palmerg as a transformative force in Ghana's energy landscape, 
-                    pioneering sustainable practices and driving forward the nation's energy independence.
+                    We combine regulatory awareness, financial discipline, and operational grit so Palmerg can grow responsibly alongside Ghana&apos;s energy needs.
                   </p>
                 </div>
               }
               {activeTab === "achievements" &&
               <div>
-                  <span className="inline-flex items-center gap-2 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase">
-                    🏆 Achievements
+                  <span className="inline-flex items-center gap-2 bg-primary/15 text-primary text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase">
+                    Strategic direction
                   </span>
                   <h3 className="font-heading font-bold text-3xl text-foreground mb-5">
-                    A Track Record That Speaks Volumes
+                    Highlights from our company profile
                   </h3>
                   <ul className="space-y-3">
                     {[
-                  "NPA Licensed & Fully Compliant Downstream Operator",
-                  "19+ Operational Stations across 6 Regions of Ghana",
-                  "Bulk fuel supply partner for commercial & industrial clients",
-                  "4 Million+ litres distributed monthly across our network",
-                  "200+ daily customers served with premium Palmerg products",
-                  "99% station uptime through robust maintenance protocols"].
-                  map((item, i) =>
-                  <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                      "Wholly Ghanaian ownership — in business since 2010",
+                      "Governance through a five-member board directing group strategy",
+                      "8,504,118 litres traded to date, per our company profile",
+                      "Consistent BDC-to-OMC brokerage and long-standing client relationships",
+                      "Northern regional operations and nationwide brand growth, including marketing leadership from 2020",
+                      "Advancing through NPA licensing toward a full oil marketing company (OMC) mandate",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
                         <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                         {item}
                       </li>
-                  )}
+                    ))}
                   </ul>
                 </div>
               }
@@ -225,9 +287,8 @@ export default function About() {
               </h2>
               <p className="text-muted-foreground text-sm italic mb-6">From Humble Beginnings to Nationwide Presence</p>
               <p className="text-muted-foreground leading-relaxed">
-                What began as a bold entrepreneurial dream has grown into one of Ghana's most dynamic energy companies. 
-                Palmerg Energy & Resources Limited was built on a simple but powerful belief: that every Ghanaian deserves access to 
-                quality fuel at fair prices, delivered with a smile.
+                Palmerg Energy is building toward a premier licensed oil marketing footprint—grounded in brokerage, station support,
+                haulage, and consultancy, with leadership that understands both regulation and the realities of retail and logistics in Ghana&apos;s downstream sector.
               </p>
             </motion.div>
 
@@ -245,11 +306,7 @@ export default function About() {
                   License and Accreditation
                 </h4>
                 <p className="text-muted-foreground leading-relaxed text-sm">
-                  Palmerg Energy is fully licensed by the National Petroleum Authority (NPA) of Ghana — 
-                  a testament to our commitment to legal compliance, product quality, and operational 
-                  transparency. We meet and exceed all regulatory requirements as a downstream petroleum 
-                  marketing company, giving our partners and customers complete confidence in every litre 
-                  we deliver.
+                  We are advancing through the National Petroleum Authority (NPA) licensing process as we work toward becoming a fully fledged oil marketing company—committed to compliance, product quality, and transparent operations at every step.
                 </p>
               </div>
 
@@ -265,12 +322,7 @@ export default function About() {
                   for large-volume customers across Ghana.
                 </p>
                 <div className="mt-4 flex items-center gap-3">
-                  <img
-                    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/69b1a3a17a4d9f8b0154b3b3/ca0496e01_Gemini_Generated_Image_6d8u3s6d8u3s6d8u-removebg-preview.png"
-                    alt="NPA"
-                    className="h-8 w-auto opacity-70"
-                    onError={(e) => e.target.style.display = 'none'} />
-
+                  <Shield className="h-8 w-8 text-primary shrink-0 opacity-80" aria-hidden />
                   <span className="text-xs text-muted-foreground italic">Licensed by the National Petroleum Authority, Ghana</span>
                 </div>
               </div>
@@ -292,7 +344,7 @@ export default function About() {
             <h2 className="font-heading font-bold text-4xl text-foreground mb-4">Our Core Values</h2>
             <p className="text-muted-foreground max-w-xl mx-auto">The unshakeable principles that define who we are and how we serve</p>
           </motion.div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {coreValues.map((value, i) =>
             <motion.div
               key={i}
@@ -313,8 +365,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Meet The Team */}
-      <section className="py-20 bg-white">
+      {/* Meet The Team — anchor: Footer links to /About#management-profile */}
+      <section id="management-profile" className="py-20 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -322,17 +374,16 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-16">
 
-            <span className="inline-block bg-secondary/20 text-secondary-foreground text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">The People Behind The Brand</span>
+            <span className="inline-block bg-secondary/20 text-secondary-foreground text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Management profile</span>
             <h2 className="font-heading font-bold text-4xl md:text-5xl text-foreground mb-4 leading-tight">
-              Meet <span className="text-primary">everyone</span> who<br />
-              made this <span className="text-primary">possible.</span>
+              Leadership <span className="text-primary">&amp;</span> governance
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Meet the brilliant and passionate people from all over who drive our company forward every day.
+              Board and executive leadership as described in our company profile—driving strategy, operations, marketing, and special duties across Palmerg Energy.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-7 lg:gap-8 max-w-6xl mx-auto">
             {teamMembers.length === 0 ?
             <div className="col-span-full text-center py-12 text-muted-foreground">
                 No team members added yet.
@@ -346,21 +397,21 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="bg-white rounded-xl p-5 shadow-md hover:shadow-xl transition-all duration-300 group border border-border/50 cursor-pointer h-full">
+                className="bg-white rounded-2xl p-6 sm:p-7 shadow-md hover:shadow-xl transition-all duration-300 group border border-border/50 cursor-pointer h-full">
 
-                <div className="relative mb-4 mx-auto w-24 h-24">
+                <div className="relative mb-5 mx-auto w-32 h-32 sm:w-36 sm:h-36">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:from-primary/30 group-hover:to-secondary/30 transition-all" />
                   <div className="w-full h-full rounded-full border-4 border-white shadow-lg group-hover:shadow-xl transition-shadow bg-white flex items-center justify-center overflow-hidden">
                     <img
-                      src={member.photo_url || "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/ca0496e01_Gemini_Generated_Image_6d8u3s6d8u3s6d8u-removebg-preview.png"}
+                      src={member.photo_url || "/palmerg-logo.png"}
                       alt={member.name}
                       className="w-full h-full object-cover" />
 
                   </div>
                 </div>
-                <h4 className="font-heading font-bold text-sm text-foreground leading-tight mb-1 text-center group-hover:text-primary transition-colors">{member.name}</h4>
-                <p className="text-primary text-xs font-semibold mb-3 text-center">{member.role}</p>
-                <p className="text-muted-foreground text-xs text-center leading-relaxed line-clamp-3">{member.description}</p>
+                <h4 className="font-heading font-bold text-base text-foreground leading-snug mb-1.5 text-center group-hover:text-primary transition-colors">{member.name}</h4>
+                <p className="text-primary text-sm font-semibold mb-3 text-center">{member.role}</p>
+                <p className="text-muted-foreground text-sm text-center leading-relaxed line-clamp-4">{member.description}</p>
               </motion.div>
             </Link>
             )}
@@ -370,33 +421,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Location & Cookie Bar */}
-      <div className="flex flex-col md:flex-row text-white">
-        <div className="bg-purple-700 flex-1 py-4">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=No.1+Papaya+Street,+East+Legon,+Accra,+Ghana"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer">
-              
-              <MapPin className="w-4 h-4" />
-              <span className="text-sm">No.1 Papaya Street, East Legon</span>
-            </a>
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              <span className="text-sm">059 222 1997 / 020 511 7212</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-purple-500 py-4 hover:bg-purple-700 flex-1 transition-colors duration-300">
-          <div className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-2">
-            <Info className="w-5 h-5 flex-shrink-0" />
-            <span className="text-sm">Our website uses cookies to improve your experience.</span>
-          </div>
-        </div>
-      </div>
+      <FooterLocationBar />
 
       <Footer />
     </div>);

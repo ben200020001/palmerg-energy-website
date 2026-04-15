@@ -2,7 +2,7 @@
  * Palmerg images imported via Vite so URLs are content-hashed — avoids stale
  * browser cache showing old remote assets.
  *
- * Optional Base44 / production URLs: set keys in `src/data/siteMedia.overrides.json`
+ * Optional production URLs: set keys in `src/data/siteMedia.overrides.json`
  * or `VITE_SITE_MEDIA_JSON` (see `src/config/siteMedia.js`).
  */
 import { resolvePalmergKey } from "@/config/siteMedia";

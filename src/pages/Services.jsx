@@ -1,51 +1,77 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FooterLocationBar from "@/components/FooterLocationBar";
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Info } from "lucide-react";
+import { PALMERG } from "@/assets/palmerg";
+import { resolvePublicPath } from "@/config/siteMedia";
 
 const services = [
 {
   title: "Nationwide Access to Quality Fuel",
-  description: "With a growing network of over 19 strategically located stations across Ghana, Palmerg Energy ensures premium fuel is always within reach for every motorist.",
-  image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/7fe1c4481_generated_image.png",
+  description: "With a growing network of 20 strategically located stations across Ghana, Palmerg Energy ensures premium fuel is always within reach for every motorist.",
+  image: PALMERG.heroFillingStation,
   category: "Services",
   link: "/NationwideFuel"
 },
 {
   title: "Palmerg Haulage",
   description: "We provide tailored fuel supply solutions for businesses of all sizes. From transportation companies to industrial clients, our haulage services ensure timely delivery.",
-  image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/14263d9b7_generated_image.png",
+  image: PALMERG.haulage,
   category: "Services",
   link: "/PalmergHaulage"
 },
 {
   title: "Engine Oils & Lubricants",
   description: "Explore our range of high-performance engine oils and lubricants designed for cars, motorcycles, trucks, and heavy machinery. Quality you can trust.",
-  image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/3ae778b96_generated_image.png",
+  image: PALMERG.oils,
   category: "Products",
   link: "/EngineOils"
 },
 {
   title: "LPG & Gas Services",
   description: "Safe, reliable LPG supply for homes, restaurants, and industries. Our certified gas stations offer convenient cylinder refilling and bulk gas supply solutions.",
-  image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/fb69c1547_generated_image.png",
+  image: PALMERG.lpg,
   category: "Services",
   link: "/LPGServices"
 },
 {
   title: "Bulk Fuel Supply",
   description: "Reliable bulk fuel supply for mining companies, construction firms, agricultural enterprises, and government institutions. Our depots ensure seamless large-volume operations.",
-  image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/960b6858c_generated_image.png",
+  image: PALMERG.bulk,
   category: "Services",
   link: "/BulkFuelSupply"
 },
 {
   title: "Salt Mining & Export",
   description: "Large-scale salt mining operations with advanced extraction and processing capabilities, serving both local and international markets with consistent quality.",
-  image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/efa7f7aa0_generated_image.png",
+  image: PALMERG.salt,
   category: "Products",
   link: "/SaltMining"
+},
+{
+  title: "Renewable Energy",
+  description:
+    "Solar and clean-energy pathways for businesses and communities — practical steps toward lower-carbon, resilient power.",
+  image: resolvePublicPath("/images/products/renewable-energy.png"),
+  category: "Sustainability",
+  link: "/RenewableEnergy",
+},
+{
+  title: "Farming",
+  description:
+    "Fuel, logistics, and partnerships for agriculture — supporting equipment, transport, and productive value chains.",
+  image: resolvePublicPath("/images/products/farming.png"),
+  category: "Agriculture",
+  link: "/Farming",
+},
+{
+  title: "General Goods",
+  description:
+    "Sourcing and logistics for general merchandise — structured supply aligned with Palmerg’s trading and haulage strengths.",
+  image: resolvePublicPath("/images/products/general-goods.png"),
+  category: "Trade",
+  link: "/GeneralGoods",
 }];
 
 
@@ -97,33 +123,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Location & Cookie Bar */}
-      <div className="flex flex-col md:flex-row text-white">
-        <div className="bg-purple-700 flex-1 py-4">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=No.1+Papaya+Street,+East+Legon,+Accra,+Ghana"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer">
-              
-              <MapPin className="w-4 h-4" />
-              <span className="text-sm">No.1 Papaya Street, East Legon</span>
-            </a>
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              <span className="text-sm">059 222 1997 / 020 511 7212</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-purple-500 py-4 hover:bg-purple-700 flex-1 transition-colors duration-300">
-          <div className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-2">
-            <Info className="w-5 h-5 flex-shrink-0" />
-            <span className="text-sm">Our website uses cookies to improve your experience.</span>
-          </div>
-        </div>
-      </div>
+      <FooterLocationBar />
 
       <Footer />
     </div>);

@@ -79,8 +79,15 @@ export const productsSectionItems = [
   },
 ];
 
-/** Homepage “Products & services” strip — generator, diesel, automotive only (Services page uses full `productsSectionItems`). */
-const HOME_PRODUCT_LINKS = ["/GeneratorSets", "/DieselFuel", "/AutomotiveQualityFuel"];
+/** Homepage “Products & services” strip (Services page uses full `productsSectionItems`). */
+const HOME_PRODUCT_LINKS = [
+  "/GeneratorSets",
+  "/DieselFuel",
+  "/AutomotiveQualityFuel",
+  "/RenewableEnergy",
+  "/Farming",
+  "/GeneralGoods",
+];
 
 export const homeProductsSectionItems = HOME_PRODUCT_LINKS.map((link) =>
   productsSectionItems.find((p) => p.link === link),

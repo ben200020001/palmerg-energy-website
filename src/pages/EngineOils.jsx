@@ -4,6 +4,7 @@ import { Shield, CheckCircle, Droplets } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PALMERG } from "@/assets/palmerg";
 
 export default function EngineOils() {
   return (
@@ -46,7 +47,7 @@ export default function EngineOils() {
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/60d23efae_generated_image.png"
+                  src={PALMERG.oils}
                   alt="Palmerg Engine Oils"
                   className="w-full h-[420px] object-cover"
                 />

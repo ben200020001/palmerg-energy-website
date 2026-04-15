@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { MapPin, Phone, Mail, MessageSquare, Send, Info } from "lucide-react";
+import FooterLocationBar from "@/components/FooterLocationBar";
+import { MapPin, Phone, Mail, MessageSquare, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Contact() {
@@ -51,7 +52,7 @@ export default function Contact() {
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="inline-block bg-purple-100 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-4">→ Contact Us</span>
+            <span className="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-4">→ Contact Us</span>
             <h1 className="font-heading font-black text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">Get in touch with us.</h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-base">
               Please let us know if you have a question, want to leave a comment, or would like further information about Palmerg Energy & Resources Limited.
@@ -170,22 +171,7 @@ export default function Contact() {
                       <Mail className="w-4 h-4 text-primary" />
                       <a href="mailto:graham@palmergenergy.com" className="hover:text-primary transition-colors">graham@palmergenergy.com</a>
                     </div>
-                    <div className="flex items-center gap-2 text-foreground">
-                      <Mail className="w-4 h-4 text-primary" />
-                      <a href="mailto:benbrown@palmergenergy.com" className="hover:text-primary transition-colors">benbrown@palmergenergy.com</a>
-                    </div>
-                    <div className="flex items-center gap-2 text-foreground">
-                      <Mail className="w-4 h-4 text-primary" />
-                      <a href="mailto:nayram@palmergenergy.com" className="hover:text-primary transition-colors">nayram@palmergenergy.com</a>
-                    </div>
-                    <div className="flex items-center gap-2 text-foreground">
-                      <Mail className="w-4 h-4 text-primary" />
-                      <a href="mailto:fawzy@palmergenergy.com" className="hover:text-primary transition-colors">fawzy@palmergenergy.com</a>
-                    </div>
-                    <div className="flex items-center gap-2 text-foreground">
-                      <Mail className="w-4 h-4 text-primary" />
-                      <a href="mailto:emmanuel@palmergenergy.com" className="hover:text-primary transition-colors">emmanuel@palmergenergy.com</a>
-                    </div>
+                    
                   </div>
                 </div>
 
@@ -201,32 +187,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Location & Cookie Bar */}
-      <div className="flex flex-col md:flex-row text-white">
-        <div className="bg-purple-700 flex-1 py-4">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=No.1+Papaya+Street,+East+Legon,+Accra,+Ghana"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-secondary transition-colors cursor-pointer">
-              <MapPin className="w-4 h-4" />
-              <span className="text-sm">No.1 Papaya Street, East Legon</span>
-            </a>
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4" />
-              <span className="text-sm">059 222 1997 / 020 511 7212</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-purple-500 py-4 hover:bg-purple-700 flex-1 transition-colors duration-300">
-          <div className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-2">
-            <Info className="w-5 h-5 flex-shrink-0" />
-            <span className="text-sm">Our website uses cookies to improve your experience.</span>
-          </div>
-        </div>
-      </div>
+      <FooterLocationBar />
 
       <Footer />
     </div>);

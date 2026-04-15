@@ -36,7 +36,7 @@ export default function FuelingStations() {
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Palmerg Energy & Resources Limited is your preferred energy partner across Ghana. We offer high-quality automotive fuels
-                and refined Palmerg products that power your journey across the continent. With over 19+ strategically located
+                and refined Palmerg products that power your journey across the continent. With 20 strategically located
                 stations nationwide, we ensure you're never far from premium fuel.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
@@ -53,7 +53,7 @@ export default function FuelingStations() {
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69b1a3a17a4d9f8b0154b3b3/1b585e164_generated_image.png"
+                  src="/images/palmerg/palmerg-gallery-station.png"
                   alt="Palmerg fuel station"
                   className="w-full h-[420px] object-cover"
                 />
@@ -72,7 +72,7 @@ export default function FuelingStations() {
               { title: "Premium Petrol", desc: "High-octane petrol designed for optimal engine performance and fuel efficiency." },
               { title: "Quality Diesel", desc: "Ultra-low sulphur diesel for heavy-duty vehicles and commercial fleets." },
               { title: "LPG Gas", desc: "Safe, clean, and affordable liquefied petroleum gas for domestic and commercial use." },
-              { title: "19+ Stations Nationwide", desc: "Strategically located across multiple regions from Western North to Upper West." },
+              { title: "20 Stations Nationwide", desc: "Strategically located across multiple regions from Western North to Upper West." },
               { title: "Quality Assurance", desc: "Every litre undergoes rigorous quality control to meet NPA standards." },
               { title: "Trained Attendants", desc: "Professional, courteous staff dedicated to excellent customer service." },
             ].map((item, i) => (

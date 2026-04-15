@@ -81,10 +81,48 @@
   background: #555;
 }
 
+/* Map stack stays below fixed site chrome (header z-1200) */
+.leaflet-container {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+}
+
 .leaflet-top {
   top: 64px; /* moves + / - down below header */
 }
 
 .leaflet-bottom {
   bottom: 8px; /* gives a bit of breathing room above footer */
+}
+
+/* Palmerg custom map markers + station cards (Leaflet) */
+.palmerg-leaflet-marker-icon {
+  filter: drop-shadow(0 2px 8px rgba(15, 45, 82, 0.38));
+}
+
+.leaflet-container .leaflet-popup.palmerg-station-popup .leaflet-popup-content-wrapper {
+  border-radius: 0.75rem;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.2);
+  max-width: min(280px, calc(100vw - 1.5rem));
+  box-sizing: border-box;
+}
+
+.leaflet-container .leaflet-popup.palmerg-station-popup .leaflet-popup-content {
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+.palmerg-station-map-details {
+  max-width: 100%;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
