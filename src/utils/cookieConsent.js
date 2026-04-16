@@ -1,7 +1,7 @@
 import { getCookie, setCookie, deleteCookie } from "@/utils/cookies";
 
-export const CONSENT_COOKIE_NAME = "genora_cookie_consent_v1";
-export const ANALYTICS_COOKIE_NAME = "genora_analytics_enabled";
+export const CONSENT_COOKIE_NAME = "palmerg_cookie_consent_v1";
+export const ANALYTICS_COOKIE_NAME = "palmerg_analytics_enabled";
 export const COOKIE_MAX_AGE = 365 * 24 * 60 * 60; // 1 year
 
 export function getSavedConsent() {

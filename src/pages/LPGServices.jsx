@@ -32,7 +32,7 @@ export default function LPGServices() {
                 Safe & Reliable <span className="text-primary">LPG Solutions</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Genora Energy provides safe, reliable LPG supply for homes, restaurants, and industries. Our certified gas stations offer convenient cylinder refilling and bulk gas supply solutions at competitive prices.
+                Palmerg Energy provides safe, reliable LPG supply for homes, restaurants, and industries. Our certified gas stations offer convenient cylinder refilling and bulk gas supply solutions at competitive prices.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 All our LPG operations are carried out in full compliance with Ghana's safety and environmental regulations. Our trained staff ensure every refill is handled with the utmost care.

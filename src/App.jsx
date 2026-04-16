@@ -28,6 +28,15 @@ const LayoutWrapper = ({ children, currentPageName }) => Layout ?
   <Layout currentPageName={currentPageName}>{children}</Layout>
   : <>{children}</>;
 
+/** Keeps the browser tab title on Palmerg after client navigation (SPA). */
+const DocumentTitle = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    document.title = "Palmerg Energy";
+  }, [pathname]);
+  return null;
+};
+
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
 
@@ -54,6 +63,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClientInstance}>
       <Router basename={routerBasename}>
+        <DocumentTitle />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Navigate to="/Home" replace />} />
