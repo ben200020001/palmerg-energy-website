@@ -367,7 +367,7 @@ export default function About() {
 
       {/* Meet The Team — anchor: Footer links to /About#management-profile */}
       <section id="management-profile" className="py-20 bg-white scroll-mt-28">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -378,12 +378,12 @@ export default function About() {
             <h2 className="font-heading font-bold text-4xl md:text-5xl text-foreground mb-4 leading-tight">
               Leadership <span className="text-primary">&amp;</span> governance
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Board and executive leadership as described in our company profile—driving strategy, operations, marketing, and special duties across Palmerg Energy.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-7 lg:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10 max-w-7xl xl:max-w-[90rem] mx-auto">
             {teamMembers.length === 0 ?
             <div className="col-span-full text-center py-12 text-muted-foreground">
                 No team members added yet.
@@ -397,9 +397,9 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="bg-white rounded-2xl p-6 sm:p-7 shadow-md hover:shadow-xl transition-all duration-300 group border border-border/50 cursor-pointer h-full">
+                className="bg-white rounded-2xl p-7 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 group border border-border/50 cursor-pointer h-full">
 
-                <div className="relative mb-5 mx-auto w-32 h-32 sm:w-36 sm:h-36">
+                <div className="relative mb-6 mx-auto w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:from-primary/30 group-hover:to-secondary/30 transition-all" />
                   <div className="w-full h-full rounded-full border-4 border-white shadow-lg group-hover:shadow-xl transition-shadow bg-white flex items-center justify-center overflow-hidden">
                     <img

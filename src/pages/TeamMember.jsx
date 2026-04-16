@@ -73,7 +73,7 @@ export default function TeamMemberDetail() {
               animate={{ opacity: 1, y: 0 }}
               className="lg:col-span-1">
               <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 text-center sticky top-32">
-                <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 p-2">
+                <div className="w-56 h-56 sm:w-64 sm:h-64 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 p-2">
                   <div className="w-full h-full rounded-full border-4 border-white shadow-xl bg-white flex items-center justify-center overflow-hidden">
                     <img
                       src={member.photo_url || "/palmerg-logo.png"}
