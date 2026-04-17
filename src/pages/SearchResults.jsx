@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams, Link, useNavigate } from "react-router-dom";
 import { Search, Loader2, ChevronRight, Home, Zap } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FooterLocationBar from "@/components/FooterLocationBar";
 import { motion } from "framer-motion";
+import { searchSite } from "@/utils/siteSearch";
 
 export default function SearchResults() {
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const query = searchParams.get("q") || "";
   const [results, setResults] = useState(null);
@@ -20,32 +22,13 @@ export default function SearchResults() {
     }
   }, [query]);
 
-  const fetchResults = async (q) => {
+  const fetchResults = (q) => {
     if (!q.trim()) return;
     setLoading(true);
     setResults(null);
     try {
-      const res = await fetch("/api/search", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ q }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || "Search failed");
+      const data = searchSite(q);
       setResults(data);
-    } catch (_err) {
-      setResults({
-        summary: "Search is temporarily unavailable. Please try again shortly.",
-        did_you_mean: null,
-        results: [
-          {
-            title: "Contact Palmerg Energy",
-            description: "Reach out to our team for help with products, services, and station locations.",
-            page_path: "/Contact",
-            category: "Support",
-          },
-        ],
-      });
     } finally {
       setLoading(false);
     }
@@ -53,8 +36,9 @@ export default function SearchResults() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (searchInput.trim()) {
-      window.location.href = `/SearchResults?q=${encodeURIComponent(searchInput)}`;
+    const q = searchInput.trim();
+    if (q) {
+      navigate(`/SearchResults?q=${encodeURIComponent(q)}`);
     }
   };
 
@@ -116,12 +100,12 @@ export default function SearchResults() {
             {results.did_you_mean && (
               <div className="mb-6 text-sm text-muted-foreground">
                 Did you mean:{" "}
-                <a
-                  href={`/SearchResults?q=${encodeURIComponent(results.did_you_mean)}`}
+                <Link
+                  to={`/SearchResults?q=${encodeURIComponent(results.did_you_mean)}`}
                   className="text-primary font-medium hover:underline"
                 >
                   {results.did_you_mean}
-                </a>
+                </Link>
                 ?
               </div>
             )}
@@ -132,7 +116,7 @@ export default function SearchResults() {
                 <Zap className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-primary mb-1 uppercase tracking-wide">AI Summary</p>
+                <p className="text-sm font-semibold text-primary mb-1 uppercase tracking-wide">Search summary</p>
                 <p className="text-foreground text-sm leading-relaxed">{results.summary}</p>
               </div>
             </div>

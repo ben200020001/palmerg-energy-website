@@ -202,7 +202,11 @@ export default function Header() {
                   <span key={suggestion}>
                     <button
                       type="button"
-                      onClick={() => setSearchQuery(suggestion)}
+                      onClick={() => {
+                        setSearchOpen(false);
+                        setSearchQuery("");
+                        navigate(`/SearchResults?q=${encodeURIComponent(suggestion)}`);
+                      }}
                       className="text-foreground hover:text-primary"
                     >
                       {suggestion}
