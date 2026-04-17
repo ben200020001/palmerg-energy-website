@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-# Push this branch to origin after every commit.
-# Skip: SKIP_PUSH=1 git commit   — or disable all Husky hooks: HUSKY=0 git commit
-[ -n "${SKIP_PUSH:-}" ] && exit 0
-
-branch=$(git rev-parse --abbrev-ref HEAD)
-git push origin "$branch"
