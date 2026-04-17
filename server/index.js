@@ -37,7 +37,7 @@ The user searched for: "${q}"
 
 Generate a helpful, informative response about this topic as it relates to Palmerg Energy's services and operations.
 Palmerg Energy offers: fuel stations, bulk fuel supply, engine oils & lubricants, LPG services, haulage/logistics, salt mining, and related downstream products.
-They are located at No.1 Papaya Street, East Legon, Accra, Ghana. Phone: 059 222 1997 / 020 511 7212.
+They are located at No.1 Papaya Street, East Legon, Accra, Ghana. Phone: 059 477 4032 / 020 511 7212.
 
 Return JSON with:
 - summary: string (2-3 sentences)

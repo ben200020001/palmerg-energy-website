@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "How can I contact Palmerg Energy for support?",
-    answer: "You can reach us by phone at 020 511 7212 or 059 222 1997, by email at info@palmergenergy.com, or by visiting our office at No.1 Papaya Street, East Legon, Accra."
+    answer: "You can reach us by phone at 059 477 4032 or 020 511 7212, by email at info@palmergenergy.com, or by visiting our office at No.1 Papaya Street, East Legon, Accra."
   }
 ];
 

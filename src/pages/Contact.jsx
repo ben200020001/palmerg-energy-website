@@ -42,7 +42,7 @@ export default function Contact() {
           width="100%"
           height="350"
           style={{ border: 0 }}
-          allowFullScreen=""
+          allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade" className="mt-16 mb-6" />
         
@@ -149,11 +149,11 @@ export default function Contact() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-foreground">
                       <Phone className="w-4 h-4 text-primary" />
-                      <a href="tel:+233205117212" className="hover:text-primary transition-colors">020 511 7212</a>
+                      <a href="tel:+233594774032" className="hover:text-primary transition-colors">059 477 4032</a>
                     </div>
                     <div className="flex items-center gap-2 text-foreground">
                       <Phone className="w-4 h-4 text-primary" />
-                      <a href="tel:+233592221997" className="hover:text-primary transition-colors">059 222 1997</a>
+                      <a href="tel:+233205117212" className="hover:text-primary transition-colors">020 511 7212</a>
                     </div>
                   </div>
                 </div>
