@@ -21,21 +21,13 @@ import GalleryPhoto from './pages/GalleryPhoto';
 import TeamMember from './pages/TeamMember';
 
 import CookieConsentBanner from './components/CookieConsentBanner';
+import SeoHead from './components/SeoHead';
 
 const { Pages, Layout } = pagesConfig;
 
 const LayoutWrapper = ({ children, currentPageName }) => Layout ?
   <Layout currentPageName={currentPageName}>{children}</Layout>
   : <>{children}</>;
-
-/** Keeps the browser tab title on Palmerg after client navigation (SPA). */
-const DocumentTitle = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    document.title = "Palmerg Energy";
-  }, [pathname]);
-  return null;
-};
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -63,7 +55,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClientInstance}>
       <Router basename={routerBasename}>
-        <DocumentTitle />
+        <SeoHead />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Navigate to="/Home" replace />} />
