@@ -4,27 +4,47 @@ import Footer from "@/components/Footer";
 import FooterLocationBar from "@/components/FooterLocationBar";
 import { MapPin, Phone, Mail, MessageSquare, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { apiUrl } from "@/utils/apiUrl";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", address: "", phone: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
+    setSendError("");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(apiUrl("/api/contact"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || "Send failed");
+
+      let data;
+      const text = await res.text();
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch {
+        throw new Error(
+          res.status === 404
+            ? "Contact service not found. Use a Web Service on Render that runs the Node server (not Static Site only), or set VITE_API_URL to your API URL."
+            : "Server returned an invalid response. Check deploy logs."
+        );
+      }
+
+      if (!res.ok) {
+        const detail = data?.detail ? ` ${String(data.detail).slice(0, 200)}` : "";
+        throw new Error((data?.error || "Send failed") + detail);
+      }
 
       setSubmitted(true);
       setForm({ name: "", email: "", address: "", phone: "", subject: "", message: "" });
+    } catch (err) {
+      setSendError(err?.message || "Could not send message. Please try again or email us directly.");
     } finally {
       setSending(false);
     }
@@ -76,6 +96,13 @@ export default function Contact() {
                 </div> :
 
               <form onSubmit={handleSubmit} className="space-y-4">
+                  {sendError ? (
+                    <div
+                      role="alert"
+                      className="rounded-md border border-destructive/40 bg-destructive/5 px-4 py-3 text-sm text-destructive">
+                      {sendError}
+                    </div>
+                  ) : null}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <input
                     required
