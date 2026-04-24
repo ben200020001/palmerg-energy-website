@@ -102,7 +102,8 @@ app.post("/api/contact", async (req, res) => {
   }
 
   const to = process.env.CONTACT_TO || "info@palmergenergy.com";
-  const from = process.env.CONTACT_FROM || "Palmerg Energy <onboarding@resend.dev>";
+  const from =
+    process.env.CONTACT_FROM || "Palmerg Energy Contact Form <info@palmergenergy.com>";
 
   const html = `
     <h2>New Contact Form Submission</h2>

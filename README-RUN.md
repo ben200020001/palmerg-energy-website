@@ -9,10 +9,11 @@ cd palmerg-energy-website
 npm install
 ```
 
-Create a `.env` file in the project root (optional for static browsing; required for APIs):
+Create a `.env` file in the project root (see `.env.example`; optional for static browsing; required for APIs):
 
 - `OPENAI_API_KEY` (for `/api/search`)
 - `RESEND_API_KEY` (for `/api/contact`)
+- `CONTACT_TO`, `CONTACT_FROM` (optional; Resend “to”/“from” for contact form — verify domain in Resend for production)
 
 ## Run (frontend + backend)
 ```bash
