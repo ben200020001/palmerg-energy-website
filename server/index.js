@@ -37,7 +37,7 @@ The user searched for: "${q}"
 
 Generate a helpful, informative response about this topic as it relates to Palmerg Energy's services and operations.
 Palmerg Energy offers: fuel stations, bulk fuel supply, engine oils & lubricants, LPG services, haulage/logistics, salt mining, and related downstream products.
-They are located at No.1 Papaya Street, East Legon, Accra, Ghana. Phone: 059 477 4032 / 020 511 7212.
+They are located at No.1 Papaya Street, East Legon, Accra, Ghana. Phone: 0594774032.
 
 Return JSON with:
 - summary: string (2-3 sentences)
@@ -96,6 +96,17 @@ app.post("/api/contact", async (req, res) => {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
+  const captcha = await verifyRecaptchaToken(
+    String(form.recaptchaToken ?? "").trim(),
+    req.socket?.remoteAddress,
+    typeof req.headers["x-forwarded-for"] === "string"
+      ? req.headers["x-forwarded-for"].split(",")[0]?.trim()
+      : undefined
+  );
+  if (!captcha.ok) {
+    return res.status(400).json({ error: captcha.error || "Captcha verification failed" });
+  }
+
   const resendKey = process.env.RESEND_API_KEY;
   if (!resendKey) {
     return res.status(500).json({ error: "Server missing RESEND_API_KEY" });
@@ -143,6 +154,50 @@ app.post("/api/contact", async (req, res) => {
     return res.status(500).json({ error: "Server error", detail: String(err?.message || err) });
   }
 });
+
+/**
+ * reCAPTCHA v3 (or v2) siteverify. If RECAPTCHA_SECRET_KEY is unset, verification is skipped (local dev).
+ */
+async function verifyRecaptchaToken(token, reqIp, forwardedFor) {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  if (!secret) return { ok: true };
+
+  if (!token) {
+    return { ok: false, error: "Missing captcha token" };
+  }
+
+  const params = new URLSearchParams();
+  params.set("secret", secret);
+  params.set("response", token);
+  const remoteip = forwardedFor || reqIp;
+  if (remoteip && typeof remoteip === "string") {
+    params.set("remoteip", remoteip.replace(/^::ffff:/, ""));
+  }
+
+  try {
+    const verifyRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
+    });
+    const data = await verifyRes.json();
+
+    if (!data.success) {
+      return { ok: false, error: "Captcha verification failed" };
+    }
+
+    if (typeof data.score === "number") {
+      const min = Number(process.env.RECAPTCHA_MIN_SCORE || "0.5");
+      if (data.score < min) {
+        return { ok: false, error: "Captcha verification failed" };
+      }
+    }
+
+    return { ok: true };
+  } catch {
+    return { ok: false, error: "Captcha verification unavailable" };
+  }
+}
 
 function escapeHtml(input) {
   return String(input).replace(/[&<>"']/g, (ch) => {

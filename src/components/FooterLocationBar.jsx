@@ -6,7 +6,7 @@ import { MapPin, Phone, Info } from "lucide-react";
  */
 export default function FooterLocationBar({
   addressLine = "No.1 Papaya Street, East Legon",
-  phone = "059 477 4032 / 020 511 7212",
+  phone = "0594774032",
   mapQuery = "No.1+Papaya+Street,+East+Legon,+Accra,+Ghana",
   useMapLink = true,
   containerClassName = "max-w-7xl mx-auto px-4",

@@ -2,7 +2,7 @@ import { memo } from "react";
 import { MapPin, Phone, Fuel, Clock } from "lucide-react";
 
 const DEFAULTS = {
-  phoneLabel: "059 477 4032 / 020 511 7212",
+  phoneLabel: "0594774032",
   phoneHref: "tel:+233594774032",
   fuelTypes: "Petrol, Diesel",
   hours: "24/7",

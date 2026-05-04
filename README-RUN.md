@@ -14,6 +14,7 @@ Create a `.env` file in the project root (see `.env.example`; optional for stati
 - `OPENAI_API_KEY` (for `/api/search`)
 - `RESEND_API_KEY` (for `/api/contact`)
 - `CONTACT_TO`, `CONTACT_FROM` (optional; Resend “to”/“from” for contact form — verify domain in Resend for production)
+- `VITE_RECAPTCHA_SITE_KEY`, `RECAPTCHA_SECRET_KEY` (recommended production: [reCAPTCHA v3](https://www.google.com/recaptcha/admin); register site hostname including `localhost` for dev). If the secret is unset, the server skips verification (local convenience).
 
 ## Run (frontend + backend)
 ```bash

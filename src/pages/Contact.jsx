@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FooterLocationBar from "@/components/FooterLocationBar";
-import { MapPin, Phone, Mail, MessageSquare, Send } from "lucide-react";
+import { Phone, Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { apiUrl } from "@/utils/apiUrl";
+import { executeRecaptcha, isRecaptchaConfigured, loadRecaptchaScript } from "@/utils/recaptcha";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", address: "", phone: "", subject: "", message: "" });
@@ -12,16 +13,33 @@ export default function Contact() {
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState("");
 
+  useEffect(() => {
+    if (isRecaptchaConfigured()) {
+      loadRecaptchaScript().catch(() => {});
+    }
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
     setSendError("");
 
     try {
+      let recaptchaToken = null;
+      if (isRecaptchaConfigured()) {
+        try {
+          recaptchaToken = await executeRecaptcha("contact");
+        } catch {
+          throw new Error(
+            "Could not load spam protection (reCAPTCHA). Disable blockers or try again."
+          );
+        }
+      }
+
       const res = await fetch(apiUrl("/api/contact"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, recaptchaToken }),
       });
 
       let data;
@@ -148,9 +166,29 @@ export default function Contact() {
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="Your Message"
                   className="w-full px-4 py-3 border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary bg-white resize-none" />
-                
-                  
-                
+
+                  {isRecaptchaConfigured() ? (
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      This site is protected by reCAPTCHA and the Google{" "}
+                      <a
+                        href="https://policies.google.com/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:text-foreground">
+                        Privacy Policy
+                      </a>{" "}
+                      and{" "}
+                      <a
+                        href="https://policies.google.com/terms"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:text-foreground">
+                        Terms of Service
+                      </a>{" "}
+                      apply.
+                    </p>
+                  ) : null}
+
                   <Button
                   type="submit"
                   className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-md font-semibold"
@@ -176,11 +214,7 @@ export default function Contact() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-foreground">
                       <Phone className="w-4 h-4 text-primary" />
-                      <a href="tel:+233594774032" className="hover:text-primary transition-colors">059 477 4032</a>
-                    </div>
-                    <div className="flex items-center gap-2 text-foreground">
-                      <Phone className="w-4 h-4 text-primary" />
-                      <a href="tel:+233205117212" className="hover:text-primary transition-colors">020 511 7212</a>
+                      <a href="tel:+233594774032" className="hover:text-primary transition-colors">0594774032</a>
                     </div>
                   </div>
                 </div>
