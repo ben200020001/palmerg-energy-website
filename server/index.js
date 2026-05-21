@@ -23,6 +23,14 @@ app.get("/api/health", (_req, res) => {
   res.json({ ok: true });
 });
 
+/** Public config for the SPA (site key is not secret; secret stays server-only). */
+app.get("/api/public-config", (_req, res) => {
+  const recaptchaSiteKey = String(
+    process.env.VITE_RECAPTCHA_SITE_KEY || process.env.RECAPTCHA_SITE_KEY || ""
+  ).trim();
+  res.json({ recaptchaSiteKey });
+});
+
 app.post("/api/search", async (req, res) => {
   const q = String(req.body?.q ?? "").trim();
   if (!q) return res.status(400).json({ error: "Missing q" });

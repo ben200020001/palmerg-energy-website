@@ -12,11 +12,18 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState("");
+  const [recaptchaEnabled, setRecaptchaEnabled] = useState(false);
 
   useEffect(() => {
-    if (isRecaptchaConfigured()) {
-      loadRecaptchaScript().catch(() => {});
-    }
+    let cancelled = false;
+    isRecaptchaConfigured().then((enabled) => {
+      if (cancelled) return;
+      setRecaptchaEnabled(enabled);
+      if (enabled) loadRecaptchaScript().catch(() => {});
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const handleSubmit = async (e) => {
@@ -26,7 +33,8 @@ export default function Contact() {
 
     try {
       let recaptchaToken = null;
-      if (isRecaptchaConfigured()) {
+      const captchaOn = await isRecaptchaConfigured();
+      if (captchaOn) {
         try {
           recaptchaToken = await executeRecaptcha("contact");
         } catch {
@@ -62,9 +70,9 @@ export default function Contact() {
       if (!res.ok) {
         if (data?.error === "Missing captcha token") {
           throw new Error(
-            isRecaptchaConfigured()
+            captchaOn
               ? "Spam protection did not send a token. Disable ad blockers (e.g. Ghostery, uBlock) for this site and try again."
-              : "Contact form is misconfigured: redeploy with VITE_RECAPTCHA_SITE_KEY set in Render (same key pair as RECAPTCHA_SECRET_KEY)."
+              : "Contact form is misconfigured: set RECAPTCHA_SITE_KEY or VITE_RECAPTCHA_SITE_KEY in Render (same key pair as RECAPTCHA_SECRET_KEY), then redeploy."
           );
         }
         const detail = data?.detail ? ` ${String(data.detail).slice(0, 200)}` : "";
@@ -179,7 +187,7 @@ export default function Contact() {
                   placeholder="Your Message"
                   className="w-full px-4 py-3 border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary bg-white resize-none" />
 
-                  {isRecaptchaConfigured() ? (
+                  {recaptchaEnabled ? (
                     <p className="text-xs text-muted-foreground leading-relaxed">
                       This site is protected by reCAPTCHA and the Google{" "}
                       <a
