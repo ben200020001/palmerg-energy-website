@@ -31,7 +31,12 @@ export default function Contact() {
           recaptchaToken = await executeRecaptcha("contact");
         } catch {
           throw new Error(
-            "Could not load spam protection (reCAPTCHA). Disable blockers or try again."
+            "Could not load spam protection (reCAPTCHA). Disable ad blockers for this site and try again."
+          );
+        }
+        if (!recaptchaToken) {
+          throw new Error(
+            "Could not get spam protection token. Disable ad blockers for this site and try again."
           );
         }
       }
@@ -55,6 +60,13 @@ export default function Contact() {
       }
 
       if (!res.ok) {
+        if (data?.error === "Missing captcha token") {
+          throw new Error(
+            isRecaptchaConfigured()
+              ? "Spam protection did not send a token. Disable ad blockers (e.g. Ghostery, uBlock) for this site and try again."
+              : "Contact form is misconfigured: redeploy with VITE_RECAPTCHA_SITE_KEY set in Render (same key pair as RECAPTCHA_SECRET_KEY)."
+          );
+        }
         const detail = data?.detail ? ` ${String(data.detail).slice(0, 200)}` : "";
         throw new Error((data?.error || "Send failed") + detail);
       }
