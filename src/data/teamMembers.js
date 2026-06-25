@@ -23,20 +23,20 @@ export const TEAM_MEMBERS = [
   },
   {
     id: "3",
-    name: "Mohammed Jamal Abdulai (MBA, BSc)",
-    role: "Operations Director",
+    name: "Aboagye Bediako",
+    role: "General Manager",
     description:
-      "Former National Petroleum Authority (NPA) official with three years ensuring integrity of depot operations—then private-sector leadership with Santol Energy and consultancy with Viggo Energy. As Operations Director, he channels a decade of experience and an MBA in Finance toward making Palmerg a household name in Ghana’s energy landscape, pairing regulatory insight with entrepreneurial drive.",
-    photo_url: "/images/management/mohammed-jamal-abdulai.png",
+      "Aboagye Bediako brings hands-on leadership to every level of the business, overseeing daily operations and steering the company's strategic direction. With a strong focus on operational efficiency, client satisfaction, and team development, he ensures that every project delivered upholds the highest standards of quality and professionalism. Under his management, the company has strengthened its fuel trading processes, improved turnaround times, and built lasting relationships with clients. He is known for a practical, results-driven approach and a commitment to growing the business while staying closely connected to the work on the ground.",
+    photo_url: "/images/management/Aboagye.png",
     email: "info@palmergenergy.com",
   },
   {
     id: "4",
-    name: "Bawa Abdallah Abubakari (B.Com)",
-    role: "Marketing Manager",
+    name: "Paul Kwasi Sallah",
+    role: "Ashanti / Western Regional Manager",
     description:
-      "Over 15 years across auditing, finance, and operations, with leadership roles at Dukes Petroleum and Blanko Oil. Since 2020 he has spearheaded Palmerg’s Northern Regional operations, using regulatory and operational depth to support Palmerg’s transition into a premier licensed oil marketing company and expand the brand across Ghana.",
-    photo_url: "/images/management/bawa-abdallah-abubakari.jpeg",
+      "Paul Kwasi Sallah serves as the Regional Manager overseeing all company operations across the Ashanti and Western Regions of Ghana — two of the country's most economically vital and strategically important zones. He is the primary point of contact for all regional business, partnerships, and regulatory engagements. Building and maintaining relationships with key clients, Station managers and regulatory Bodies. Ensuring compliance with NPA regulations and HSE safety standards.",
+    photo_url: "/images/management/Salah.png",
     email: "info@palmergenergy.com",
   },
   {
@@ -46,6 +46,7 @@ export const TEAM_MEMBERS = [
     description:
       "Executive director in charge of special duties. Before joining Palmerg, Emmanuel worked in import/export of general goods, fuel haulage, and logistics from 2012. Appointed a director of Palmerg Energy in February 2025. Known as a fast thinker and strong problem-solver.",
     photo_url: "/images/management/emmanuel-asmah.jpeg",
+    photo_object_position: "center",
     email: "emmanuel@palmergenergy.com",
   },
 ];
