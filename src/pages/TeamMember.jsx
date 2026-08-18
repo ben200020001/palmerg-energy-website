@@ -79,11 +79,14 @@ export default function TeamMemberDetail() {
                       src={member.photo_url || "/palmerg-logo.png"}
                       alt={member.name}
                       className="w-full h-full object-cover"
-                      style={
-                        member.photo_object_position ?
+                      style={{
+                        ...(member.photo_object_position ?
                         { objectPosition: member.photo_object_position } :
-                        undefined
-                      } />
+                        {}),
+                        ...(member.photo_scale ?
+                        { transform: `scale(${member.photo_scale})` } :
+                        {}),
+                      }} />
                     
                   </div>
                 </div>

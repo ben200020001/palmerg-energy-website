@@ -49,4 +49,15 @@ export const TEAM_MEMBERS = [
     photo_object_position: "center",
     email: "emmanuel@palmergenergy.com",
   },
+  {
+    id: "6",
+    name: "Quao Romeo Paul Atsu",
+    role: "Executive Director of Operations",
+    description:
+      "A highly tactical and mission-focused leader with a proven ability to manage operational complexity within the value chain in the downstream. Direct daily activities across bulk storage terminals, depot operations, blending facilities, and distribution channels to maximize throughput and minimize downtime.",
+    photo_url: "/images/management/quao-romeo-paul-atsu.png",
+    photo_object_position: "center 28%",
+    photo_scale: 0.92,
+    email: "info@palmergenergy.com",
+  },
 ];
