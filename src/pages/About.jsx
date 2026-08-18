@@ -51,9 +51,7 @@ export default function About() {
                 Overview
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6 text-base">
-                Palmerg Energy &amp; Resources Limited is a private, wholly Ghanaian company engaged in filling station management, oil and gas brokerage and supply, fuel haulage, and general consultancy in the downstream sector. A strategic objective is to become a fully fledged oil marketing company; we are{" "}
-                <strong className="text-foreground">advancing through the National Petroleum Authority (NPA) licensing process</strong>.
-                We broker fuel supply from Bulk Distribution Companies (BDCs) to Oil Marketing Companies (OMCs), and we manage filling stations facing operational challenges—delivering practical solutions and consultancy alongside consistent quality products and superior service to loyal clients.
+                Palmerg Energy &amp; Resources Limited is a private, wholly Ghanaian company engaged in filling station management, oil and gas supply, fuel haulage, and general consultancy in the downstream sector. We purchase fuel from Bulk Distribution Companies (BDCs) to Oil Marketing Companies (OMCs), and we manage filling stations facing operational challenges—delivering practical solutions and consultancy alongside consistent quality products and superior service to loyal clients.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6 text-base">
                 Our leadership brings deep experience across market dynamics, station management, haulage and logistics, and downstream consultancy—supporting partners, regulators, and communities as we grow.

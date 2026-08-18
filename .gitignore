@@ -3,6 +3,9 @@
 .env.*
 !.env.example
 
+# macOS resource fork files
+._*
+
 # Logs
 /logs
 *.log

@@ -32,6 +32,17 @@ export const TEAM_MEMBERS = [
   },
   {
     id: "4",
+    name: "Quao Romeo Paul Atsu",
+    role: "Executive Director of Operations",
+    description:
+      "A mission-focused operational leader with a proven track record of driving efficiency, compliance, and profitability across high-volume retail filling stations. Directs daily station management, fuel stock forecasting, wet stock reconciliation, and forecourt maintenance to maximize throughput, eliminate fuel losses, and ensure zero-downtime operations.",
+    photo_url: "/images/management/quao-romeo-paul-atsu.png",
+    photo_object_position: "center 28%",
+    photo_scale: 0.92,
+    email: "info@palmergenergy.com",
+  },
+  {
+    id: "5",
     name: "Paul Kwasi Sallah",
     role: "Ashanti / Western Regional Manager",
     description:
@@ -40,7 +51,7 @@ export const TEAM_MEMBERS = [
     email: "info@palmergenergy.com",
   },
   {
-    id: "5",
+    id: "6",
     name: "Emmanuel Asmah",
     role: "Executive Director (Special Duties)",
     description:
@@ -48,16 +59,5 @@ export const TEAM_MEMBERS = [
     photo_url: "/images/management/emmanuel-asmah.jpeg",
     photo_object_position: "center",
     email: "emmanuel@palmergenergy.com",
-  },
-  {
-    id: "6",
-    name: "Quao Romeo Paul Atsu",
-    role: "Executive Director of Operations",
-    description:
-      "A highly tactical and mission-focused leader with a proven ability to manage operational complexity within the value chain in the downstream. Direct daily activities across bulk storage terminals, depot operations, blending facilities, and distribution channels to maximize throughput and minimize downtime.",
-    photo_url: "/images/management/quao-romeo-paul-atsu.png",
-    photo_object_position: "center 28%",
-    photo_scale: 0.92,
-    email: "info@palmergenergy.com",
   },
 ];
