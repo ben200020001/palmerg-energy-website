@@ -37,8 +37,6 @@ export const TEAM_MEMBERS = [
     description:
       "A mission-focused operational leader with a proven track record of driving efficiency, compliance, and profitability across high-volume retail filling stations. Directs daily station management, fuel stock forecasting, wet stock reconciliation, and forecourt maintenance to maximize throughput, eliminate fuel losses, and ensure zero-downtime operations.",
     photo_url: "/images/management/quao-romeo-paul-atsu.png",
-    photo_object_position: "center 28%",
-    photo_scale: 0.92,
     email: "info@palmergenergy.com",
   },
   {
