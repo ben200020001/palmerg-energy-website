@@ -52,6 +52,7 @@ export default function About() {
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6 text-base">
                 Palmerg Energy &amp; Resources Limited is a private, wholly Ghanaian company engaged in filling station management, oil and gas supply, fuel haulage, and general consultancy in the downstream sector. We purchase fuel from Bulk Distribution Companies (BDCs) to Oil Marketing Companies (OMCs), and we manage filling stations facing operational challenges—delivering practical solutions and consultancy alongside consistent quality products and superior service to loyal clients.
+                The company is currently advancing towards acquiring its license from the National Petroleum Authority(NPA).
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6 text-base">
                 Our leadership brings deep experience across market dynamics, station management, haulage and logistics, and downstream consultancy—supporting partners, regulators, and communities as we grow.
@@ -66,7 +67,7 @@ export default function About() {
                   <div className="rounded-xl border border-primary/15 bg-gradient-to-br from-primary/[0.07] to-transparent p-4 shadow-sm">
                     <p className="text-[11px] font-semibold uppercase tracking-wider text-primary/90">Heritage</p>
                     <p className="font-heading mt-2 text-lg font-bold leading-tight text-foreground sm:text-xl">
-                      In business since 2010
+                      In business since 2025
                     </p>
                     <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                       Serving Ghana&apos;s downstream energy market with consistent quality and service.
@@ -84,7 +85,7 @@ export default function About() {
                   <div className="rounded-xl border border-primary/15 bg-white p-4 shadow-sm sm:col-span-1">
                     <p className="text-[11px] font-semibold uppercase tracking-wider text-primary/90">Scale</p>
                     <p className="font-heading mt-2 text-lg font-bold leading-tight text-foreground sm:text-xl">
-                      Over 8.5 million litres traded to date
+                      Over 2.5 million litres traded to date
                     </p>
                     <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                       Across our network and partnerships, with volumes continuing to grow.
@@ -119,7 +120,7 @@ export default function About() {
                       In business since
                     </span>
                     <span className="font-heading text-2xl font-black tabular-nums leading-none text-white sm:text-3xl">
-                      2010
+                      2025
                     </span>
                   </div>
                   <div className="flex min-w-0 flex-1 flex-col items-center justify-center gap-0.5 px-2 text-center sm:px-3">
@@ -142,7 +143,7 @@ export default function About() {
                       Over
                     </span>
                     <span className="font-heading text-2xl font-black leading-none text-white sm:text-3xl">
-                      8.5M+
+                      2.5M+
                     </span>
                     <span className="max-w-[7rem] text-[10px] font-medium leading-snug text-white/85 sm:text-xs">
                       litres traded to date
@@ -247,9 +248,9 @@ export default function About() {
                   </h3>
                   <ul className="space-y-3">
                     {[
-                      "Wholly Ghanaian ownership — in business since 2010",
+                      "Wholly Ghanaian ownership — in business since 2025",
                       "Governance through a five-member board directing group strategy",
-                      "8,504,118 litres traded to date, per our company profile",
+                      "2,504,118 litres traded to date, per our company profile",
                       "Consistent BDC-to-OMC brokerage and long-standing client relationships",
                       "Northern regional operations and nationwide brand growth, including marketing leadership from 2020",
                       "Advancing through NPA licensing toward a full oil marketing company (OMC) mandate",
