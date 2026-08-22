@@ -32,7 +32,7 @@ export const TEAM_MEMBERS = [
   },
   {
     id: "4",
-    name: "Quao Romeo Paul Atsu",
+    name: "Quao Romeo Paul Atsu (Bsc Accounting/Msc Project Mgt/PMP)",
     role: "Executive Director of Operations",
     description:
       "A mission-focused operational leader with a proven track record of driving efficiency, compliance, and profitability across high-volume retail filling stations. Directs daily station management, fuel stock forecasting, wet stock reconciliation, and forecourt maintenance to maximize throughput, eliminate fuel losses, and ensure zero-downtime operations.",
